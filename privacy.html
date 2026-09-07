@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trellis Privacy Policy</title>
+<style>
+  :root {
+    --bg: #F2EAD6;
+    --surface: #FAF3E4;
+    --ink: #33422B;
+    --body: #4B4636;
+    --muted: #8C7F5E;
+    --accent: #5F7A45;
+    --border: #DECFA6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1C2018;
+      --surface: #262B21;
+      --ink: #E7E2CF;
+      --body: #CFC9B4;
+      --muted: #93A17E;
+      --accent: #9CC17A;
+      --border: #3A4030;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1C2018;
+    --surface: #262B21;
+    --ink: #E7E2CF;
+    --body: #CFC9B4;
+    --muted: #93A17E;
+    --accent: #9CC17A;
+    --border: #3A4030;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--body);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 22px;
+    text-decoration: none;
+  }
+
+  .eyebrow svg { flex: none; }
+
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1.08;
+    color: var(--ink);
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .meta {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--muted);
+    margin: 0 0 8px;
+  }
+
+  .intro {
+    font-size: 18px;
+    color: var(--ink);
+    margin: 28px 0 8px;
+  }
+
+  .lattice {
+    width: 100%;
+    height: 22px;
+    margin: 44px 0 36px;
+    display: block;
+  }
+  .lattice line { stroke: var(--border); stroke-width: 1.4; }
+  .lattice circle { fill: var(--accent); }
+
+  section h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 23px;
+    color: var(--ink);
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+
+  section p {
+    margin: 0 0 16px;
+    max-width: 62ch;
+  }
+
+  section p:last-child { margin-bottom: 0; }
+
+  section + section { margin-top: 8px; }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .contact-block {
+    margin-top: 44px;
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .contact-block h2 { margin-bottom: 6px; }
+  .contact-block p { margin: 0; }
+
+  .closing-mark {
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 48px 20px 72px; }
+    h1 { font-size: 34px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+  <a class="eyebrow" href="index.html">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 15V6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M8 9C8 9 3 8.5 3 4C7 4 8 9 8 9Z" fill="currentColor"/>
+      <path d="M8 7C8 7 13 6.5 13 2C9 2 8 7 8 7Z" fill="currentColor"/>
+    </svg>
+    Trellis
+  </a>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated September 6, 2026</p>
+
+  <p class="intro">
+    Trellis is a task, calendar, and weather app. This policy explains what information
+    Trellis accesses, why, and where it goes. There is no Trellis server — your tasks,
+    events, and settings are stored only on your device.
+  </p>
+
+  <svg class="lattice" viewBox="0 0 640 22" preserveAspectRatio="none" aria-hidden="true">
+    <line x1="0" y1="4" x2="640" y2="4"/>
+    <line x1="0" y1="18" x2="640" y2="18"/>
+    <line x1="296" y1="0" x2="320" y2="22"/>
+    <line x1="320" y1="0" x2="344" y2="22"/>
+    <circle cx="308" cy="11" r="2.5"/>
+    <circle cx="332" cy="11" r="2.5"/>
+  </svg>
+
+  <section>
+    <h2>Location</h2>
+    <p>
+      If you grant location access, Trellis uses your device's location to fetch a weather
+      forecast and radar imagery for where you are. Your coordinates are sent directly to
+      whichever weather provider you've selected — Open-Meteo, the U.S. National Weather
+      Service, or OpenWeatherMap — to retrieve that forecast. Trellis does not store your
+      location history or share it with anyone else. You can also search for a location by
+      name instead of granting location access.
+    </p>
+  </section>
+
+  <section>
+    <h2>Calendar</h2>
+    <p>
+      If you connect Google Calendar, Trellis requests permission to view and manage events
+      (the <code>calendar.events</code> scope) so it can show your Google events alongside
+      your tasks and add events you create in Trellis back to your calendar. Trellis never
+      accesses any other part of your Google account.
+    </p>
+    <p>
+      If you enable on-device calendars (e.g. a Samsung or Outlook calendar already on your
+      phone), Trellis reads those events read-only, to display them next to your tasks. It
+      never edits or deletes on-device calendar events.
+    </p>
+  </section>
+
+  <section>
+    <h2>Notifications and alarms</h2>
+    <p>
+      Trellis uses notification and exact-alarm permissions to remind you about tasks,
+      deliver your daily summary, and alert you to severe weather. These are scheduled and
+      shown entirely on your device.
+    </p>
+  </section>
+
+  <section>
+    <h2>What Trellis does not do</h2>
+    <p>
+      Trellis has no user accounts, no analytics or tracking SDKs, and shows no ads. Nothing
+      you enter into Trellis — tasks, events, notes — is uploaded anywhere. The only network
+      requests Trellis makes are the ones described above: fetching weather for a location,
+      and syncing with Google Calendar if you choose to connect it. Trellis does not sell or
+      share your data with third parties for advertising.
+    </p>
+  </section>
+
+  <section>
+    <h2>Data retention and deletion</h2>
+    <p>
+      Your tasks, events, and settings live in local app storage until you delete them or
+      uninstall Trellis, at which point they're gone. Disconnecting Google Calendar in
+      Settings revokes Trellis's access immediately.
+    </p>
+  </section>
+
+  <section>
+    <h2>Children's privacy</h2>
+    <p>
+      Trellis is not directed at children under 13, and Trellis does not knowingly collect
+      personal information from anyone under 13.
+    </p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>
+      If this policy changes, the updated version will be posted at this same address with
+      a new "last updated" date above.
+    </p>
+  </section>
+
+  <div class="contact-block">
+    <h2>Contact</h2>
+    <p>Questions about this policy or your data? Reach out at <a href="mailto:jlamp606@gmail.com">jlamp606@gmail.com</a>.</p>
+  </div>
+
+  <div class="closing-mark">
+    <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 15V6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M8 9C8 9 3 8.5 3 4C7 4 8 9 8 9Z" fill="currentColor"/>
+      <path d="M8 7C8 7 13 6.5 13 2C9 2 8 7 8 7Z" fill="currentColor"/>
+    </svg>
+  </div>
+</div>
+</body>
+</html>

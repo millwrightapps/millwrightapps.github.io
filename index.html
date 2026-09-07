@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Millwright Apps</title>
+<style>
+  :root {
+    --bg: #F2EAD6;
+    --surface: #FAF3E4;
+    --ink: #33422B;
+    --body: #4B4636;
+    --muted: #8C7F5E;
+    --accent: #5F7A45;
+    --border: #DECFA6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1C2018;
+      --surface: #262B21;
+      --ink: #E7E2CF;
+      --body: #CFC9B4;
+      --muted: #93A17E;
+      --accent: #9CC17A;
+      --border: #3A4030;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1C2018;
+    --surface: #262B21;
+    --ink: #E7E2CF;
+    --body: #CFC9B4;
+    --muted: #93A17E;
+    --accent: #9CC17A;
+    --border: #3A4030;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--body);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 96px 24px 96px;
+  }
+
+  .wordmark {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 1.08;
+    color: var(--ink);
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+
+  .tagline {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--muted);
+    margin: 0 0 40px;
+  }
+
+  p { max-width: 62ch; margin: 0 0 18px; }
+  p:last-of-type { margin-bottom: 0; }
+
+  .lattice {
+    width: 100%;
+    height: 22px;
+    margin: 40px 0 36px;
+    display: block;
+  }
+  .lattice line { stroke: var(--border); stroke-width: 1.4; }
+  .lattice circle { fill: var(--accent); }
+
+  .apps {
+    margin-top: 44px;
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .apps h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+  .app-entry { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+  .app-entry:last-child { margin-bottom: 0; }
+  .app-entry .name { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 18px; color: var(--ink); }
+  .app-entry .desc { font-size: 15px; color: var(--body); }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .contact {
+    margin-top: 44px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 64px 20px 72px; }
+    .wordmark { font-size: 36px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+  <div class="wordmark">Millwright Apps</div>
+  <p class="tagline">Solid, dependable tools, built with care.</p>
+
+  <p>
+    Millwright is a one-person app studio. No team, no funding — just someone who likes
+    building useful, well-made things and figuring it out as I go.
+  </p>
+  <p>
+    The name comes from the old trade: a millwright is the person who builds and maintains
+    the machinery that keeps everything running. That's the idea here — dependable tools,
+    built with care rather than chasing trends.
+  </p>
+
+  <svg class="lattice" viewBox="0 0 640 22" preserveAspectRatio="none" aria-hidden="true">
+    <line x1="0" y1="4" x2="640" y2="4"/>
+    <line x1="0" y1="18" x2="640" y2="18"/>
+    <line x1="296" y1="0" x2="320" y2="22"/>
+    <line x1="320" y1="0" x2="344" y2="22"/>
+    <circle cx="308" cy="11" r="2.5"/>
+    <circle cx="332" cy="11" r="2.5"/>
+  </svg>
+
+  <div class="apps">
+    <h2>Apps</h2>
+    <div class="app-entry">
+      <span class="name">Trellis</span>
+      <span class="desc">— a task, calendar, and weather app with a garden that grows as you get things done.</span>
+    </div>
+  </div>
+
+  <p class="contact">
+    Questions, feedback, or just want to say hi? <a href="mailto:jlamp606@gmail.com">jlamp606@gmail.com</a><br>
+    <a href="privacy.html">Trellis Privacy Policy</a>
+  </p>
+</div>
+</body>
+</html>
