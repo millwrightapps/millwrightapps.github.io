@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Culvert Privacy Policy</title>
+<style>
+  :root {
+    --bg: #EAF0F2;
+    --surface: #F5F9FA;
+    --ink: #1E2E38;
+    --body: #3D5361;
+    --muted: #728997;
+    --accent: #4C6C8C;
+    --border: #C9D9DF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141414;
+      --surface: #1F1F1F;
+      --ink: #E8E8E8;
+      --body: #C7D3DA;
+      --muted: #9A9A9A;
+      --accent: #86A8C4;
+      --border: #2A2A2A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141414;
+    --surface: #1F1F1F;
+    --ink: #E8E8E8;
+    --body: #C7D3DA;
+    --muted: #9A9A9A;
+    --accent: #86A8C4;
+    --border: #2A2A2A;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--body);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 22px;
+    text-decoration: none;
+  }
+
+  .eyebrow svg { flex: none; }
+
+  h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .meta {
+    font-size: 15px;
+    color: var(--muted);
+    margin: 0 0 8px;
+  }
+
+  .intro {
+    font-size: 18px;
+    color: var(--ink);
+    margin: 28px 0 8px;
+  }
+
+  .current {
+    display: block;
+    width: 100%;
+    height: 22px;
+    margin: 44px 0 36px;
+  }
+  .current path { stroke: var(--border); stroke-width: 1.4; fill: none; }
+  .current circle { fill: var(--accent); }
+
+  section h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--ink);
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+
+  section p, section ul {
+    margin: 0 0 16px;
+    max-width: 62ch;
+  }
+  section ul { padding-left: 22px; }
+  section li { margin-bottom: 6px; }
+
+  section p:last-child, section ul:last-child { margin-bottom: 0; }
+
+  section + section { margin-top: 30px; }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.9em;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .contact-block {
+    margin-top: 44px;
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .contact-block h2 { margin-bottom: 6px; }
+  .contact-block p { margin: 0; }
+
+  .closing-mark {
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 48px 20px 72px; }
+    h1 { font-size: 32px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+  <a class="eyebrow" href="index.html">
+    <svg width="16" height="16" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="10" fill="currentColor"/>
+    </svg>
+    Culvert
+  </a>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated September 10, 2026</p>
+
+  <p class="intro">
+    Culvert is a personal email client for Gmail and Outlook. This policy explains what
+    Culvert accesses, why, and where it goes. There is no Culvert server — your messages,
+    settings, and everything Culvert figures out about your mail are stored only in a local
+    database on your device.
+  </p>
+
+  <svg class="current" viewBox="0 0 640 22" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 11 C 60 -3, 100 25, 160 11 S 260 -3, 320 11 S 420 25, 480 11 S 580 -3, 640 11" />
+    <circle cx="160" cy="11" r="2.6"/>
+    <circle cx="480" cy="11" r="2.6"/>
+  </svg>
+
+  <section>
+    <h2>Email access</h2>
+    <p>
+      When you connect a Google or Microsoft account, Culvert asks for permission to read,
+      organize, and send mail on your behalf, using each provider's own official sign-in
+      screen — Culvert never sees or stores your email password. Specifically:
+    </p>
+    <p><strong>Google (Gmail API):</strong></p>
+    <ul>
+      <li><code>gmail.readonly</code> — to sync your messages</li>
+      <li><code>gmail.modify</code> — to mark messages read, archive them, move them to
+        trash, and report spam/phishing, mirroring the same actions Gmail's own app offers</li>
+      <li><code>gmail.send</code> — to send and reply to messages you write in Culvert</li>
+    </ul>
+    <p><strong>Microsoft (Graph API):</strong></p>
+    <ul>
+      <li><code>Mail.ReadWrite</code> — to sync, archive, and report spam the same way</li>
+      <li><code>Mail.Send</code> — to send and reply to messages</li>
+      <li><code>User.Read</code> — your basic profile (name and address), to identify the
+        connected account</li>
+    </ul>
+    <p>
+      Culvert's use and transfer of information received from Google APIs to any other app
+      will adhere to the
+      <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>,
+      including the Limited Use requirements.
+    </p>
+  </section>
+
+  <section>
+    <h2>What stays on your device</h2>
+    <p>
+      Everything Culvert does with your mail after fetching it happens locally: sorting
+      messages into categories, marking VIP senders, local search (including archived
+      messages), and flagging messages with a mismatched sender domain as possibly
+      suspicious. None of that reads your message content off your device, calls any
+      Culvert server, or uses a cloud AI service — there's no server to send it to.
+    </p>
+  </section>
+
+  <section>
+    <h2>Notifications</h2>
+    <p>
+      If you enable "Notify on new mail," Culvert checks for new messages in the background
+      and shows a local system notification. This check happens directly against Gmail or
+      Graph on the schedule you set in Settings; no separate push service is involved.
+    </p>
+  </section>
+
+  <section>
+    <h2>App lock</h2>
+    <p>
+      If you turn on App lock, Culvert asks Android to verify you using whatever screen
+      lock you've already set up — fingerprint, face, PIN, or pattern. That verification is
+      handled entirely by your device's own operating system; Culvert only receives a
+      yes-or-no answer and never sees or stores any biometric data itself.
+    </p>
+  </section>
+
+  <section>
+    <h2>Signatures and backup export</h2>
+    <p>
+      Email signatures (including any images you add) are stored only in Culvert's local
+      app storage on your device. Exporting a backup copies Culvert's local database to a
+      location you choose, using Android's own file picker — Culvert doesn't upload that
+      file anywhere itself.
+    </p>
+  </section>
+
+  <section>
+    <h2>What Culvert does not do</h2>
+    <p>
+      Culvert has no user accounts of its own, no analytics or tracking SDKs, and shows no
+      ads. It does not sell or share your data with third parties, and doesn't run your
+      mail through any AI or cloud service to sort, summarize, or analyze it. The only
+      network requests Culvert makes are the Gmail/Graph API calls described above.
+    </p>
+  </section>
+
+  <section>
+    <h2>Third-party services</h2>
+    <p>
+      Signing in and syncing mail relies on Google's and Microsoft's own services, which
+      have their own privacy policies covering how they handle your account:
+    </p>
+    <ul>
+      <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Microsoft Privacy Statement</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Data retention and deletion</h2>
+    <p>
+      Your synced mail, settings, and signatures live in local app storage until you clear
+      them or uninstall Culvert, at which point they're gone. Culvert doesn't yet have a
+      built-in "disconnect account" option; to revoke Culvert's access to your Google or
+      Microsoft account directly, remove it from your account's own security settings
+      (Google's <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Third-party access</a> page,
+      or Microsoft's <a href="https://account.live.com/consent/Manage" target="_blank" rel="noopener">App access</a> page).
+    </p>
+  </section>
+
+  <section>
+    <h2>Children's privacy</h2>
+    <p>
+      Culvert is not directed at children under 13, and Culvert does not knowingly collect
+      personal information from anyone under 13.
+    </p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>
+      If this policy changes, the updated version will be posted at this same address with
+      a new "last updated" date above.
+    </p>
+  </section>
+
+  <div class="contact-block">
+    <h2>Contact</h2>
+    <p>Questions about this policy or your data? Reach out at <a href="mailto:jlamp606@gmail.com">jlamp606@gmail.com</a>.</p>
+  </div>
+
+  <div class="closing-mark">
+    <svg width="18" height="18" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="10" fill="currentColor"/>
+    </svg>
+  </div>
+</div>
+</body>
+</html>
