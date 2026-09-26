@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trellis Privacy Policy</title>
+<meta name="description" content="How Trellis, the task, calendar, and weather app from Millwright Apps, handles your information.">
+<link rel="icon" type="image/png" href="assets/trellis-icon.png">
 <style>
   :root {
     --bg: #F2EAD6;
@@ -13,6 +15,8 @@
     --muted: #8C7F5E;
     --accent: #5F7A45;
     --border: #DECFA6;
+    --tile: #F5E9D7;
+    --shadow: 0 1px 2px rgba(61, 42, 22, .06), 0 8px 24px rgba(61, 42, 22, .07);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -23,6 +27,7 @@
       --muted: #93A17E;
       --accent: #9CC17A;
       --border: #3A4030;
+      --shadow: none;
     }
   }
   :root[data-theme="dark"] {
@@ -33,10 +38,12 @@
     --muted: #93A17E;
     --accent: #9CC17A;
     --border: #3A4030;
+    --shadow: none;
   }
 
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
   body {
     background: var(--bg);
@@ -47,15 +54,44 @@
   }
 
   .page {
-    max-width: 680px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 72px 24px 96px;
+    padding: 36px 24px 88px;
   }
 
-  .eyebrow {
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .back:hover { color: var(--accent); }
+  .back img { width: 22px; height: auto; }
+
+  header.hero {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 22px;
+    margin: 48px 0 0;
+  }
+
+  .app-tile {
+    flex: none;
+    width: 84px;
+    height: 84px;
+    border-radius: 22%;
+    background: var(--tile);
+    box-shadow: var(--shadow), inset 0 0 0 1px rgba(132, 99, 54, .14);
+    overflow: hidden;
+  }
+  .app-tile img { width: 100%; height: 100%; display: block; }
+
+  .eyebrow {
     font-family: "Fraunces", Georgia, serif;
     font-style: italic;
     font-weight: 500;
@@ -63,87 +99,174 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 22px;
-    text-decoration: none;
+    margin: 0 0 4px;
   }
-
-  .eyebrow svg { flex: none; }
 
   h1 {
     font-family: "Fraunces", Georgia, serif;
     font-optical-sizing: auto;
     font-weight: 600;
-    font-size: 42px;
-    line-height: 1.08;
+    font-size: 44px;
+    line-height: 1.05;
     color: var(--ink);
-    margin: 0 0 14px;
+    margin: 0;
     text-wrap: balance;
   }
 
   .meta {
-    font-family: "Source Serif 4", Georgia, serif;
     font-style: italic;
     font-size: 15px;
     color: var(--muted);
-    margin: 0 0 8px;
+    margin: 18px 0 0;
   }
 
   .intro {
-    font-size: 18px;
+    font-size: 19px;
+    line-height: 1.6;
     color: var(--ink);
-    margin: 28px 0 8px;
+    margin: 22px 0 0;
   }
+
+  .glance {
+    margin: 32px 0 0;
+    padding: 22px 24px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+  .glance h2, .toc h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  .glance ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .glance li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.5; }
+  .glance li svg { flex: none; margin-top: 3px; color: var(--accent); }
+
+  .toc { margin: 36px 0 0; }
+  .toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .toc a {
+    display: inline-block;
+    font-size: 14px;
+    padding: 5px 13px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--body);
+    text-decoration: none;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .toc a:hover { background: var(--surface); border-color: var(--accent); color: var(--ink); }
 
   .lattice {
     width: 100%;
     height: 22px;
-    margin: 44px 0 36px;
+    margin: 40px 0 8px;
     display: block;
   }
   .lattice line { stroke: var(--border); stroke-width: 1.4; }
   .lattice circle { fill: var(--accent); }
 
+  section {
+    padding: 28px 0 0;
+    scroll-margin-top: 20px;
+  }
+
   section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
     font-family: "Fraunces", Georgia, serif;
     font-weight: 600;
-    font-size: 23px;
+    font-size: 24px;
+    line-height: 1.25;
     color: var(--ink);
     margin: 0 0 10px;
     text-wrap: balance;
   }
-
-  section p {
-    margin: 0 0 16px;
-    max-width: 62ch;
-  }
-
-  section p:last-child { margin-bottom: 0; }
-
-  section + section { margin-top: 8px; }
-
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-  .contact-block {
-    margin-top: 44px;
-    padding: 22px 24px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-  }
-  .contact-block h2 { margin-bottom: 6px; }
-  .contact-block p { margin: 0; }
-
-  .closing-mark {
-    display: flex;
-    justify-content: center;
-    margin-top: 56px;
+  section h2 .num {
+    flex: none;
+    width: 1.6em;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
     color: var(--muted);
   }
 
-  @media (max-width: 480px) {
-    .page { padding: 48px 20px 72px; }
+  .body { padding-left: calc(14px * 1.6 + 12px); }
+  .body p, .body ul { margin: 0 0 14px; max-width: 64ch; }
+  .body ul { padding-left: 1.2em; }
+  .body li { margin-bottom: 6px; }
+  .body li::marker { color: var(--accent); }
+  .body > :last-child { margin-bottom: 0; }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.84em;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1px 5px;
+  }
+
+  .contact-block {
+    margin-top: 48px;
+    padding: 22px 26px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+  .contact-block img { flex: none; width: 58px; height: auto; }
+  .contact-block h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .contact-block p { margin: 0; }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 20px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  footer nav { display: flex; gap: 18px; flex-wrap: wrap; }
+
+  @media (max-width: 520px) {
+    .page { padding: 28px 20px 72px; }
+    header.hero { gap: 16px; margin-top: 36px; }
+    .app-tile { width: 64px; height: 64px; }
     h1 { font-size: 34px; }
+    .intro { font-size: 18px; }
+    .body { padding-left: 0; }
+  }
+
+  @media print {
+    .toc, .back, .lattice, footer nav { display: none; }
+    body { background: #fff; }
+    .glance, .contact-block { box-shadow: none; }
   }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -152,23 +275,54 @@
 </head>
 <body>
 <div class="page">
-  <a class="eyebrow" href="index.html">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 15V6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-      <path d="M8 9C8 9 3 8.5 3 4C7 4 8 9 8 9Z" fill="currentColor"/>
-      <path d="M8 7C8 7 13 6.5 13 2C9 2 8 7 8 7Z" fill="currentColor"/>
-    </svg>
-    Trellis
+  <a class="back" href="index.html">
+    <img src="assets/millwright-mark.png" alt="">
+    Millwright Apps
   </a>
 
-  <h1>Privacy Policy</h1>
-  <p class="meta">Last updated September 6, 2026</p>
+  <header class="hero">
+    <div class="app-tile"><img src="assets/trellis-icon.png" alt="Trellis app icon"></div>
+    <div>
+      <p class="eyebrow">Trellis</p>
+      <h1>Privacy Policy</h1>
+    </div>
+  </header>
+  <p class="meta">Last updated September 26, 2026</p>
 
   <p class="intro">
     Trellis is a task, calendar, and weather app. This policy explains what information
-    Trellis accesses, why, and where it goes. There is no Trellis server — your tasks,
-    events, and settings are stored only on your device.
+    Trellis handles, why, and where it goes. Your tasks, events, journal, and garden are
+    stored on your device. A few features use outside services, and each one is described below.
   </p>
+
+  <div class="glance">
+    <h2>At a glance</h2>
+    <ul>
+      <li><svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Your tasks, journal, and garden live on your device.</li>
+      <li><svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>No ads, no analytics or tracking SDKs, and your data is never sold.</li>
+      <li><svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Some weather sources, place search, Pro purchases, and feedback go through a small Trellis server.</li>
+      <li><svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Google Calendar sync and Google Drive backup are optional and only run if you turn them on.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#on-device">On your device</a></li>
+      <li><a href="#location">Location &amp; weather</a></li>
+      <li><a href="#server">Trellis server</a></li>
+      <li><a href="#google">Google &amp; calendars</a></li>
+      <li><a href="#backup">Drive backup</a></li>
+      <li><a href="#purchases">Purchases</a></li>
+      <li><a href="#feedback">Feedback</a></li>
+      <li><a href="#notifications">Notifications</a></li>
+      <li><a href="#directions">Directions</a></li>
+      <li><a href="#not">What Trellis doesn't do</a></li>
+      <li><a href="#retention">Retention &amp; deletion</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#changes">Changes</a></li>
+    </ol>
+  </nav>
 
   <svg class="lattice" viewBox="0 0 640 22" preserveAspectRatio="none" aria-hidden="true">
     <line x1="0" y1="4" x2="640" y2="4"/>
@@ -179,90 +333,198 @@
     <circle cx="332" cy="11" r="2.5"/>
   </svg>
 
-  <section>
-    <h2>Location</h2>
-    <p>
-      If you grant location access, Trellis uses your device's location to fetch a weather
-      forecast and radar imagery for where you are. Your coordinates are sent directly to
-      whichever weather provider you've selected — Open-Meteo, the U.S. National Weather
-      Service, or OpenWeatherMap — to retrieve that forecast. Trellis does not store your
-      location history or share it with anyone else. You can also search for a location by
-      name instead of granting location access.
-    </p>
+  <section id="on-device">
+    <h2><span class="num">01</span>What stays on your device</h2>
+    <div class="body">
+      <p>
+        Your tasks, subtasks, events, saved locations, journal entries, garden, and settings are
+        stored in Trellis's local app storage. They leave your device only if you turn on
+        <a href="#backup">Google Drive backup</a>.
+      </p>
+    </div>
   </section>
 
-  <section>
-    <h2>Calendar</h2>
-    <p>
-      If you connect Google Calendar, Trellis requests permission to view and manage events
-      (the <code>calendar.events</code> scope) so it can show your Google events alongside
-      your tasks and add events you create in Trellis back to your calendar. Trellis never
-      accesses any other part of your Google account.
-    </p>
-    <p>
-      If you enable on-device calendars (e.g. a Samsung or Outlook calendar already on your
-      phone), Trellis reads those events read-only, to display them next to your tasks. It
-      never edits or deletes on-device calendar events.
-    </p>
+  <section id="location">
+    <h2><span class="num">02</span>Location and weather</h2>
+    <div class="body">
+      <p>
+        If you grant location access, Trellis uses your device's location to show weather and
+        radar for where you are. You can instead search for a place by name. Trellis does not
+        keep a history of your location.
+      </p>
+      <ul>
+        <li><strong>Open-Meteo</strong> and the <strong>U.S. National Weather Service</strong> receive your coordinates directly from the app.</li>
+        <li><strong>OpenWeatherMap</strong>, <strong>Pirate Weather</strong>, and, with Trellis Pro, <strong>Tomorrow.io</strong> and <strong>WeatherAPI.com</strong> are reached through the <a href="#server">Trellis server</a>, which receives your coordinates and requests the forecast from that provider for you.</li>
+        <li><strong>Place search</strong> sends what you type, or the coordinates being named, to Open-Meteo's geocoding service or, through the Trellis server, to LocationIQ.</li>
+        <li><strong>Radar and maps</strong> load image tiles for the area on screen from RainViewer, the Iowa Environmental Mesonet, and OpenTopoMap.</li>
+      </ul>
+    </div>
   </section>
 
-  <section>
-    <h2>Notifications and alarms</h2>
-    <p>
-      Trellis uses notification and exact-alarm permissions to remind you about tasks,
-      deliver your daily summary, and alert you to severe weather. These are scheduled and
-      shown entirely on your device.
-    </p>
+  <section id="server">
+    <h2><span class="num">03</span>The Trellis server</h2>
+    <div class="body">
+      <p>
+        Trellis uses a small server, hosted on Cloudflare, for the features that need one.
+        It receives only what those features require:
+      </p>
+      <ul>
+        <li>a random install ID created on your device, used to apply fair-use limits. It isn't linked to your name, email, or Google account;</li>
+        <li>coordinates, for the weather sources listed above;</li>
+        <li>search text or coordinates, for place search;</li>
+        <li>purchase details, to confirm <a href="#purchases">Trellis Pro</a>;</li>
+        <li>feedback you choose to send.</li>
+      </ul>
+      <p>
+        This information is used only to provide these features. It isn't used for advertising
+        or profiling, and it isn't sold.
+      </p>
+    </div>
   </section>
 
-  <section>
-    <h2>What Trellis does not do</h2>
-    <p>
-      Trellis has no user accounts, no analytics or tracking SDKs, and shows no ads. Nothing
-      you enter into Trellis — tasks, events, notes — is uploaded anywhere. The only network
-      requests Trellis makes are the ones described above: fetching weather for a location,
-      and syncing with Google Calendar if you choose to connect it. Trellis does not sell or
-      share your data with third parties for advertising.
-    </p>
+  <section id="google">
+    <h2><span class="num">04</span>Google sign-in and calendars</h2>
+    <div class="body">
+      <p>
+        When you connect a Google account, Trellis stores that account's email address and name
+        on your device so it can show which account is connected.
+      </p>
+      <p>
+        If you connect Google Calendar, Trellis requests permission to view and manage events
+        (the <code>calendar.events</code> scope) so it can show your Google events alongside your
+        tasks and add events you create in Trellis to your calendar. Calendar data is exchanged
+        directly between your device and Google. It doesn't pass through the Trellis server.
+        Trellis doesn't access your email, contacts, or other Google data.
+      </p>
+      <p>
+        If you enable on-device calendars (for example, a Samsung or Outlook calendar already on
+        your phone), Trellis reads those events, read-only, to show them next to your tasks. It
+        never edits or deletes on-device calendar events.
+      </p>
+    </div>
   </section>
 
-  <section>
-    <h2>Data retention and deletion</h2>
-    <p>
-      Your tasks, events, and settings live in local app storage until you delete them or
-      uninstall Trellis, at which point they're gone. Disconnecting Google Calendar in
-      Settings revokes Trellis's access immediately.
-    </p>
+  <section id="backup">
+    <h2><span class="num">05</span>Google Drive backup</h2>
+    <div class="body">
+      <p>
+        Backup is an optional Trellis Pro feature. When you tap <em>Back Up Now</em> or turn on
+        auto-backup, Trellis saves a copy of your tasks, subtasks, events, saved locations,
+        garden, and journal entries to a hidden app-data folder in your own Google Drive (the
+        <code>drive.appdata</code> scope).
+      </p>
+      <p>
+        Trellis can see only the files it created in that folder, not the rest of your Drive.
+        Backups go directly from your device to Google and don't pass through the Trellis
+        server. You can restore from a backup in Settings.
+      </p>
+    </div>
   </section>
 
-  <section>
-    <h2>Children's privacy</h2>
-    <p>
-      Trellis is not directed at children under 13, and Trellis does not knowingly collect
-      personal information from anyone under 13.
-    </p>
+  <section id="purchases">
+    <h2><span class="num">06</span>Purchases</h2>
+    <div class="body">
+      <p>
+        Trellis Pro is sold through Google Play, and Google processes the payment. Trellis never
+        receives your payment details. To confirm a purchase, the app sends the product and
+        Google Play purchase token to the Trellis server. The server verifies them with Google
+        and returns a short-lived confirmation that unlocks Pro features.
+      </p>
+    </div>
   </section>
 
-  <section>
-    <h2>Changes to this policy</h2>
-    <p>
-      If this policy changes, the updated version will be posted at this same address with
-      a new "last updated" date above.
-    </p>
+  <section id="feedback">
+    <h2><span class="num">07</span>Feedback and feature requests</h2>
+    <div class="body">
+      <p>
+        When you send feedback, your subject, message, category, and any contact information you
+        choose to include go through the Trellis server to the developer's email inbox. Contact
+        information is optional. Your tasks, events, journal entries, and Google account details
+        are not attached. Please avoid including sensitive information in your message.
+      </p>
+    </div>
+  </section>
+
+  <section id="notifications">
+    <h2><span class="num">08</span>Notifications and alarms</h2>
+    <div class="body">
+      <p>
+        Trellis uses notification and exact-alarm permissions to remind you about tasks, deliver
+        your daily summary, and alert you to severe weather. These are scheduled and shown
+        entirely on your device.
+      </p>
+    </div>
+  </section>
+
+  <section id="directions">
+    <h2><span class="num">09</span>Directions</h2>
+    <div class="body">
+      <p>
+        When you tap <em>Directions</em> on an event or place, Trellis opens the map app you've
+        chosen (such as Google Maps or Waze) with that destination. From there, that app's
+        privacy policy applies.
+      </p>
+    </div>
+  </section>
+
+  <section id="not">
+    <h2><span class="num">10</span>What Trellis does not do</h2>
+    <div class="body">
+      <p>
+        Trellis shows no ads and includes no analytics or tracking SDKs. It doesn't sell your data
+        or share it with third parties for advertising. There's no separate Trellis account to
+        create.
+      </p>
+    </div>
+  </section>
+
+  <section id="retention">
+    <h2><span class="num">11</span>Data retention and deletion</h2>
+    <div class="body">
+      <ul>
+        <li>Data on your device stays until you delete it or uninstall Trellis.</li>
+        <li>A Drive backup stays in your Google Drive until you delete it. To remove it, open Google Drive on the web and go to <em>Settings → Manage apps → Trellis → Options → Delete hidden app data</em>.</li>
+        <li>Disconnecting Google Calendar in Settings stops Trellis's access immediately. You can also remove Trellis's access anytime from your Google Account's <a href="https://myaccount.google.com/connections">third-party connections</a> page.</li>
+        <li>Uninstalling Trellis doesn't delete feedback messages already delivered. Email <a href="mailto:jlamp606@gmail.com">jlamp606@gmail.com</a> to ask about or delete any information associated with your install or your feedback.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="children">
+    <h2><span class="num">12</span>Children's privacy</h2>
+    <div class="body">
+      <p>
+        Trellis is not directed at children under 13, and Trellis does not knowingly collect
+        personal information from anyone under 13.
+      </p>
+    </div>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">13</span>Changes to this policy</h2>
+    <div class="body">
+      <p>
+        If this policy changes, the updated version will be posted at this same address with a new
+        "last updated" date above.
+      </p>
+    </div>
   </section>
 
   <div class="contact-block">
-    <h2>Contact</h2>
-    <p>Questions about this policy or your data? Reach out at <a href="mailto:jlamp606@gmail.com">jlamp606@gmail.com</a>.</p>
+    <img src="assets/trellis-sunflower.webp" alt="">
+    <div>
+      <h2>Questions?</h2>
+      <p>Reach out about this policy or your data at <a href="mailto:jlamp606@gmail.com">jlamp606@gmail.com</a>.</p>
+    </div>
   </div>
 
-  <div class="closing-mark">
-    <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 15V6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-      <path d="M8 9C8 9 3 8.5 3 4C7 4 8 9 8 9Z" fill="currentColor"/>
-      <path d="M8 7C8 7 13 6.5 13 2C9 2 8 7 8 7Z" fill="currentColor"/>
-    </svg>
-  </div>
+  <footer>
+    <span>© 2026 Millwright Apps</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="https://play.google.com/store/apps/details?id=com.millwrightapps.trellis">Trellis on Google Play</a>
+    </nav>
+  </footer>
 </div>
 </body>
 </html>
