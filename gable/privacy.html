@@ -202,7 +202,7 @@
     <h2>Places and search</h2>
     <p>
       Places you save are stored only on your device. When you search for a city, the text you
-      type is sent to Open-Meteo's geocoding service to find matching places.
+      type is sent to Google's geocoding service, built into Android through Google Play services, to find matching places.
     </p>
   </section>
 
@@ -211,7 +211,7 @@
     <p>To get a forecast, Gable sends the coordinates of the place you're viewing (not your name or any account) to weather providers:</p>
     <ul>
       <li><strong>National Weather Service</strong> (<code>api.weather.gov</code>) for U.S. forecasts and alerts, directly from your device.</li>
-      <li><strong>MET Norway</strong>, and, if you choose them, <strong>Open-Meteo</strong>, <strong>WeatherAPI.com</strong> or <strong>AccuWeather</strong>, through Gable's own forwarding service on Cloudflare. Coordinates are rounded to about 1 km there, and nearby users share cached answers.</li>
+      <li><strong>MET Norway</strong>, <strong>WeatherAPI.com</strong> as a backup when other sources don't answer, and, if you choose them, <strong>Open-Meteo</strong> or <strong>AccuWeather</strong>, through Gable's own forwarding service on Cloudflare. Coordinates are rounded to about 1 km there, and nearby users share cached answers.</li>
       <li><strong>Gable's rain data</strong> (short-term U.S. rain forecasts that Gable prepares from NOAA's HRRR model), fetched from the same Cloudflare service.</li>
     </ul>
     <p>
@@ -265,12 +265,13 @@
     <h2>Third-party services</h2>
     <p>These services receive the data described above and handle it under their own policies:</p>
     <ul>
-      <li><a href="https://policies.google.com/privacy">Google</a> (Maps, Play)</li>
+      <li><a href="https://policies.google.com/privacy">Google</a> (Maps, place search, Play)</li>
       <li><a href="https://www.weather.gov/privacy">National Weather Service / NOAA</a></li>
       <li><a href="https://www.met.no/en/about-us/privacy">MET Norway</a></li>
-      <li><a href="https://open-meteo.com/en/terms">Open-Meteo</a></li>
+      <li><a href="https://open-meteo.com/en/terms">Open-Meteo</a>, only if you choose one of its models</li>
       <li><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a></li>
-      <li><a href="https://www.weatherapi.com/privacy.aspx">WeatherAPI.com</a> and <a href="https://www.accuweather.com/en/privacy">AccuWeather</a>, only if you choose them as your forecast source</li>
+      <li><a href="https://www.weatherapi.com/privacy.aspx">WeatherAPI.com</a></li>
+      <li><a href="https://www.accuweather.com/en/privacy">AccuWeather</a>, only if you choose it as your forecast source</li>
     </ul>
   </section>
 
