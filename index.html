@@ -19,6 +19,7 @@
     --border: #DECFA6;
     --tile: #F5E9D7;
     --culvert: #4C6C8C;
+    --gable: #0F6B60;
     --shadow: 0 1px 2px rgba(61, 42, 22, .06), 0 10px 30px rgba(61, 42, 22, .08);
   }
   @media (prefers-color-scheme: dark) {
@@ -32,6 +33,7 @@
       --on-accent: #1C2018;
       --border: #3A4030;
       --culvert: #7FA3C6;
+      --gable: #7FE0CF;
       --shadow: none;
     }
   }
@@ -45,6 +47,7 @@
     --on-accent: #1C2018;
     --border: #3A4030;
     --culvert: #7FA3C6;
+    --gable: #7FE0CF;
     --shadow: none;
   }
 
@@ -187,6 +190,7 @@
   }
   .btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
   .btn.culvert { background: var(--culvert); }
+  .btn.gable { background: var(--gable); }
   .link { font-size: 15px; }
 
   .app-card .art {
@@ -311,6 +315,21 @@
         </div>
       </div>
     </article>
+    <article class="app-card">
+      <div class="icon"><img src="assets/gable-icon.png" alt="Gable app icon"></div>
+      <div class="content">
+        <h3>Gable</h3>
+        <p class="platform">Weather and radar · Coming soon to Android</p>
+        <p class="desc">Free high-resolution NOAA radar, National Weather Service forecasts and alerts, and a little personality.</p>
+        <ul class="tags">
+          <li>Weather</li><li>Radar</li><li>Alerts</li>
+        </ul>
+        <div class="actions">
+          <a class="btn gable" href="gable/index.html">Learn more</a>
+          <a class="link" href="gable/privacy.html">Privacy policy</a>
+        </div>
+      </div>
+    </article>
   </div>
 
   <footer>
@@ -320,6 +339,7 @@
       <nav>
         <a href="privacy.html">Trellis Privacy Policy</a>
         <a href="culvert/privacy.html">Culvert Privacy Policy</a>
+        <a href="gable/privacy.html">Gable Privacy Policy</a>
       </nav>
     </div>
   </footer>
