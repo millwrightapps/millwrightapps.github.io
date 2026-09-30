@@ -109,11 +109,11 @@
     text-wrap: balance;
   }
 
-  section p, section ul {
+  section p, section ul, section ol {
     margin: 0 0 16px;
     max-width: 62ch;
   }
-  section ul { padding-left: 22px; }
+  section ul, section ol { padding-left: 22px; }
   section li { margin-bottom: 6px; }
 
   section p:last-child, section ul:last-child { margin-bottom: 0; }
@@ -274,14 +274,20 @@
     </ul>
   </section>
 
-  <section>
-    <h2>Data retention and deletion</h2>
-    <p>
-      Everything Gable stores (places, settings, cached forecasts, subscription status) lives in
-      the app's storage on your device until you remove it or uninstall Gable. There's nothing to
-      delete on a Gable server, because Gable doesn't keep your data on one. To stop location use,
-      turn it off for Gable in Android settings.
-    </p>
+  <section id="delete-data">
+    <h2>Delete your Gable data</h2>
+    <p>Gable (by Millwright Apps) keeps your data on your phone, not on a Gable server. To delete it:</p>
+    <ol>
+      <li><strong>On your phone:</strong> open Android <em>Settings → Apps → Gable → Storage</em> and tap <em>Clear storage</em>, or uninstall Gable. This deletes everything Gable stored: saved places, your last current location, settings, cached forecasts and subscription status.</li>
+      <li><strong>Location:</strong> to stop Gable using location, set its location permission to <em>Don't allow</em> in Android settings.</li>
+      <li><strong>Anything else:</strong> email <a href="mailto:jlamp606@gmail.com?subject=Gable%20data%20deletion">jlamp606@gmail.com</a> with the subject "Gable data deletion". We'll reply within 30 days.</li>
+    </ol>
+    <p><strong>What's kept, and for how long:</strong></p>
+    <ul>
+      <li>Gable's own service keeps nothing: forecast requests and purchase checks are answered and discarded right away.</li>
+      <li>Your subscription and payment records are kept by Google Play, under Google's policies. Cancel or manage a subscription in the Play Store under <em>Payments &amp; subscriptions</em>.</li>
+      <li>Usage and crash data collected by the Google Maps SDK is kept by Google under its own policies.</li>
+    </ul>
   </section>
 
   <section>
