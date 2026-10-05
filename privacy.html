@@ -450,6 +450,15 @@
         upload. The app-specific folder is hidden from the Drive interface and other Drive apps,
         and its contents are accessible through Trellis's app-specific access.
       </p>
+      <p>
+        Turning off automatic backup stops future scheduled copies, but it does not remove an
+        existing backup. To delete Trellis's saved Drive data, open
+        <a href="https://drive.google.com/drive/settings" target="_blank" rel="noopener">Google Drive settings</a>
+        on a computer, choose <em>Manage apps</em>, find Trellis, then choose
+        <em>Options → Delete hidden app data</em>. This permanently removes Trellis's backup from
+        that Google account. Deleting local Trellis data or uninstalling the app does not delete
+        the Drive backup.
+      </p>
     </div>
   </section>
 
@@ -514,9 +523,10 @@
     <h2><span class="num">11</span>Data retention and deletion</h2>
     <div class="body">
       <ul>
-        <li>Data on your device stays until you delete it or uninstall Trellis. To erase it all at once, use <em>Settings → Delete All Data</em>. This permanently deletes your tasks, events, garden, and journal entries on the device, resets your settings, and disconnects Google Calendar.</li>
-        <li>A Drive backup isn't affected by <em>Delete All Data</em>. It stays in your Google Drive until you delete it. To remove it, open Google Drive on the web and go to <em>Settings → Manage apps → Trellis → Options → Delete hidden app data</em>.</li>
-        <li>Disconnecting Google Calendar in Settings stops future Trellis sync and removes the connected account from Trellis. It does not revoke Google’s authorization by itself. To revoke that authorization, remove Trellis from your Google Account’s <a href="https://myaccount.google.com/connections">third-party connections</a> page.</li>
+        <li>Data on your device stays until you delete it or uninstall Trellis. To erase it all at once, use <em>Settings → Delete All Data</em>. This deletes local tasks, events, garden and journal data, resets settings, and disconnects Calendar.</li>
+        <li>To stop Calendar sync and remove the connected account and Google-synced calendar data from Trellis, use <em>Settings → Calendar → Disconnect</em>. This local disconnect does not revoke Google's account authorization.</li>
+        <li>To revoke Trellis's Google access, open your Google Account's <a href="https://myaccount.google.com/connections">third-party connections</a>, select Trellis, choose <em>See details → Remove access</em>, and confirm. This stops future access to Google data. Calendar data already stored on your device remains until you disconnect in Trellis or use <em>Delete All Data</em>. Clearing Trellis's app data or uninstalling it does not revoke Google authorization.</li>
+        <li>To delete an existing Drive backup, open <a href="https://drive.google.com/drive/settings">Google Drive settings</a> on a computer, choose <em>Manage apps → Trellis → Options → Delete hidden app data</em>. Turning off automatic backup or using <em>Delete All Data</em> does not delete a backup already stored in Drive.</li>
         <li>Uninstalling Trellis doesn't delete feedback messages already delivered. Email <a href="mailto:jlamp606@gmail.com">jlamp606@gmail.com</a> to ask about or delete your feedback.</li>
       </ul>
     </div>
