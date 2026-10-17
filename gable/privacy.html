@@ -171,12 +171,12 @@
   </a>
 
   <h1>Privacy Policy</h1>
-  <p class="meta">Last updated October 1, 2026</p>
+  <p class="meta">Last updated October 17, 2026</p>
 
   <p class="intro">
     Gable is a weather and radar app for Android. This policy explains what Gable uses, why, and
-    where it goes. Gable has no user accounts, no analytics and no ads. Your places, settings and
-    cached forecasts are stored on your device.
+    where it goes. Gable has no user accounts, no third-party analytics or trackers, and no ads. Your places,
+    settings and cached forecasts are stored on your device.
   </p>
 
   <svg class="current" viewBox="0 0 640 22" preserveAspectRatio="none" aria-hidden="true">
@@ -248,19 +248,37 @@
   <section>
     <h2>Purchases</h2>
     <p>
-      Gable Spotter and Forecaster are sold through <strong>Google Play</strong>, which handles payment.
+      Gable Spotter is sold through <strong>Google Play</strong>, which handles payment.
       Gable never sees your card or payment details. To confirm a subscription, the app sends
       Google Play's purchase token to Gable's forwarding service, which checks it with Google and
-      returns whether it's active. Gable doesn't store purchase tokens on any server; your
-      subscription status is kept on your device.
+      returns whether it's active. The token itself isn't stored. So access can end when a
+      subscription does, the service keeps the subscription's plan and end date under a one-way
+      hash of the token, which can't be turned back into the token or linked to your Google account.
+      Your subscription status is also kept on your device.
+    </p>
+  </section>
+
+  <section id="counts">
+    <h2>Anonymous daily counts</h2>
+    <p>
+      Gable's forwarding service keeps daily totals of the requests it handles: which feature (for
+      example, forecasts or the rain map), whether the request worked, and whether it came from a
+      subscriber. The app also counts four steps: seeing a Spotter preview, opening the Spotter
+      screen, subscribing, and first using a Spotter feature.
+    </p>
+    <p>
+      These are daily totals only. No device, account, location, IP address or purchase identifier
+      is stored with them, so they can't be linked to you, and they're deleted after 30 days. They're
+      used to keep the service within its limits and to understand which features people find useful.
     </p>
   </section>
 
   <section>
     <h2>What Gable does not do</h2>
     <p>
-      Gable has no user accounts, no analytics or tracking tools, and no advertising. It doesn't
-      sell or share your data for advertising, and it doesn't build a profile of you. Gable's data
+      Gable has no user accounts, no third-party analytics or tracking tools, and no advertising. It doesn't
+      sell or share your data, and it doesn't build a profile of you. The <a href="#counts">daily counts</a>
+      above are totals that can't identify anyone. Gable's data
       isn't included in Android device backups.
     </p>
   </section>
@@ -292,7 +310,7 @@
     </ol>
     <p><strong>What's kept, and for how long:</strong></p>
     <ul>
-      <li>Gable's own service keeps nothing: forecast requests and purchase checks are answered and discarded right away.</li>
+      <li>Gable's own service keeps no personal data. Forecast requests are answered and discarded. It keeps the <a href="#counts">anonymous daily counts</a> for 30 days, and for a subscription, only its plan and end date under a one-way hash of the purchase token.</li>
       <li>Your subscription and payment records are kept by Google Play, under Google's policies. Cancel or manage a subscription in the Play Store under <em>Payments &amp; subscriptions</em>.</li>
       <li>Usage and crash data collected by the Google Maps SDK is kept by Google under its own policies.</li>
     </ul>
