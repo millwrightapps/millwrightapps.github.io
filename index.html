@@ -135,7 +135,8 @@
   .phones { position: relative; display: flex; justify-content: center; align-items: flex-end; min-height: 520px; }
   .phones img { width: min(250px, 46%); filter: var(--phone-shadow); }
   .phones img + img { margin-left: -46px; margin-bottom: 44px; }
-  .gable-app .phones { padding-bottom: 32px; }
+  .gable-app .phones { padding-bottom: 32px; text-decoration: none; transition: transform .2s ease; }
+  .gable-app .phones:hover { transform: translateY(-3px); }
   .gable-app .phones::before { content: ""; position: absolute; inset: 22% 0 0; border-radius: 36px;
     background: linear-gradient(180deg, var(--gable-mid), var(--gable-deep)); }
   .gable-app .phones img { position: relative; }
@@ -247,15 +248,15 @@
           <svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1.2v13.6c0 .5.5.8 1 .5l11.3-6.8c.4-.3.4-.8 0-1.1L2 .6c-.5-.2-1 .1-1 .6z" fill="currentColor"/></svg>
           Get it on Google Play
         </a>
-        <a class="link" href="gable/index.html">Learn more</a>
+        <a class="btn ghost" href="gable/index.html">Visit the Gable site →</a>
         <a class="link" href="gable/privacy.html">Privacy policy</a>
       </div>
       <p class="platform">Available on Android · No ads</p>
     </div>
-    <div class="phones">
+    <a class="phones" href="gable/index.html" aria-label="Visit the Gable site">
       <img src="assets/gable/forecast.webp" width="628" height="1251" loading="lazy" alt="Gable's forecast for Chicago: 69 degrees and overcast, with a quip about the clouds">
       <img src="assets/gable/radar.webp" width="628" height="1251" loading="lazy" alt="Gable station radar with showers over Chicago and Lake Michigan">
-    </div>
+    </a>
   </section>
 </div>
 
