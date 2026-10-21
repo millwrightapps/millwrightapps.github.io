@@ -122,6 +122,10 @@
   .feature p { margin: 0 0 12px; max-width: 30em; }
   .tag { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent);
     border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px; margin-top: 6px; }
+  .pair { display: flex; gap: 20px; justify-content: center; }
+  .pair figure { margin: 0; width: min(240px, 47%); text-align: center; font-size: 14px; color: var(--muted); }
+  .pair img { filter: drop-shadow(0 20px 40px rgba(10,39,36,.25)); margin-bottom: 10px; }
+  .feature.flip .pair { order: -1; }
   .shot { justify-self: center; width: min(300px, 100%); filter: drop-shadow(0 20px 40px rgba(10,39,36,.25)); }
 
   /* Numbered list */
@@ -195,7 +199,7 @@
           <span class="free"><b>Free</b> · No ads · Android</span>
         </div>
       </div>
-      <img class="hero-phone" src="../assets/gable/forecast.webp" width="600" height="1206" alt="Gable's forecast screen: a Flood Watch banner, a rainy 69 degree forecast card and a note that rain starts around 2:15 PM">
+      <img class="hero-phone" src="../assets/gable/forecast.webp" width="628" height="1251" alt="Gable's forecast for Chicago: 69 degrees and overcast, a quip about the clouds, and no rain expected for the next four hours">
     </div>
   </div>
 </header>
@@ -215,10 +219,13 @@
     <div>
       <div class="eyebrow">01 · RADAR</div>
       <h2>Your station's radar. <span class="soft">Not a blurry mosaic.</span></h2>
-      <p>Gable reads the scans from the NOAA radar nearest you, the same data meteorologists use, or the national MRMS mosaic when you want the big picture.</p>
+      <p>Gable reads the raw scans from the NOAA radar nearest you, the same data meteorologists use. Or switch to the smooth national MRMS mosaic for the big picture.</p>
       <p>Press and hold anywhere for the exact value at that spot.</p>
     </div>
-    <img class="shot" src="../assets/gable/radar.webp" width="600" height="1206" loading="lazy" alt="Gable radar showing the Des Moines station with rain and warning outlines">
+    <div class="pair">
+      <figure><img src="../assets/gable/radar.webp" width="628" height="1251" loading="lazy" alt="Raw station radar over Chicago and Milwaukee, with showers over Lake Michigan"><figcaption>Station scan</figcaption></figure>
+      <figure><img src="../assets/gable/radar-smooth.webp" width="628" height="1251" loading="lazy" alt="The same showers on the smooth national radar mosaic"><figcaption>National mosaic</figcaption></figure>
+    </div>
   </section>
 
   <section class="feature flip">
@@ -228,7 +235,7 @@
       <p>Velocity shows wind toward and away from the radar, so tight rotation stands out. Hail and precipitation type show what's actually falling.</p>
       <span class="tag">With Gable Spotter</span>
     </div>
-    <img class="shot" src="../assets/gable/velocity.webp" width="600" height="1206" loading="lazy" alt="Gable velocity radar with a press-and-hold reading of 14 knots moving away from the radar">
+    <img class="shot" src="../assets/gable/velocity.webp" width="628" height="1251" loading="lazy" alt="Velocity from the Chicago radar: green toward the radar, red away, over Lake Michigan">
   </section>
 
   <section class="feature" id="forecasts">
@@ -236,9 +243,10 @@
       <div class="eyebrow">03 · FORECASTS</div>
       <h2>In the words of local forecasters.</h2>
       <p>In the U.S., forecasts come from your National Weather Service office, with the forecaster's own summary for every day. Everywhere else, MET Norway.</p>
-      <p>Open any day for its hourly curve, UV, sunrise and sunset, the moon, dew point and pressure.</p>
+      <p>Want the why? Read the office's forecast discussion, key messages first: the reasoning behind the forecast, straight from the people who wrote it.</p>
+      <span class="tag">Forecast discussion with Gable Spotter</span>
     </div>
-    <img class="shot" src="../assets/gable/day.webp" width="600" height="1206" loading="lazy" alt="A day's detail in Gable with an hourly temperature chart and the forecaster's summary">
+    <img class="shot" src="../assets/gable/discussion.webp" width="628" height="1251" loading="lazy" alt="The National Weather Service Chicago forecast discussion in Gable, with key messages and the forecaster's discussion">
   </section>
 
   <section class="feature flip">
@@ -247,7 +255,17 @@
       <h2>Drag through the day. <span class="soft">Hour by hour.</span></h2>
       <p>Temperature, rain and wind charts you can scrub with a finger, and a Rain soon card that says when rain starts or stops, down to 15 minutes, from NOAA's HRRR model.</p>
     </div>
-    <img class="shot" src="../assets/gable/charts.webp" width="600" height="1206" loading="lazy" alt="Gable's temperature chart with a feels-like line, above the next seven days">
+    <img class="shot" src="../assets/gable/charts.webp" width="628" height="1251" loading="lazy" alt="Gable's 24-hour temperature chart for Chicago with a feels-like line, above the next seven days">
+  </section>
+
+  <section class="feature flip" id="hurricanes">
+    <div>
+      <div class="eyebrow">05 · HURRICANES</div>
+      <h2>Hurricane season, tracked. <span class="soft">From the people who forecast it.</span></h2>
+      <p>The National Hurricane Center's cone, track, wind field and warnings over a live satellite loop, with how far your place is from the center and whether it's inside the cone.</p>
+      <span class="tag">Always free</span>
+    </div>
+    <img class="shot" src="../assets/gable/hurricane.webp" width="628" height="1251" loading="lazy" alt="Gable's hurricane tracker: a Category 3 hurricane near the Florida Panhandle with its forecast cone and track over satellite imagery">
   </section>
 
   <section class="more">
@@ -255,7 +273,7 @@
     <ol>
       <li><h3>Severe weather alerts</h3><p>NWS warnings for your places, with quiet hours that never silence a tornado or flash flood warning.</p></li>
       <li><h3>Future radar</h3><p>Where the rain is headed over the next hours, from Gable's own HRRR forecast radar.</p></li>
-      <li><h3>Hurricane tracker</h3><p>Active storms and their forecast tracks from the National Hurricane Center. Always free.</p></li>
+      <li><h3>Rain, minute by minute</h3><p>When rain starts and stops over the next hours, with a little commentary, and live countdowns with Spotter.</p></li>
       <li><h3>Your places</h3><p>Save the places you care about and swipe between them. Alerts follow each one.</p></li>
       <li><h3>Home screen widgets</h3><p>Conditions, the rain-soon chart and the days ahead on your home screen, with Spotter.</p></li>
       <li><h3>A little personality</h3><p>The sky on the forecast card moves with the weather, and Gable has a few opinions about it.</p></li>
