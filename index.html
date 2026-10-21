@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="5ITqi99dT_WO0C0hd0-U-asj3k0LPD0r8NwVhpsdA3c" />
+<meta name="google-site-verification" content="5ITqi99dT_WO0C0hd0-U-asj3k0LPD0r8NwVhpsdA3c" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Millwright Apps</title>
-<meta name="description" content="Millwright Apps is a one-person app studio making solid, dependable tools, built with care. Makers of Trellis and Culvert.">
+<meta name="description" content="Millwright Apps is a one-person app studio making solid, dependable tools, built with care. Makers of Trellis and Gable.">
+<meta property="og:title" content="Millwright Apps">
+<meta property="og:description" content="Solid, dependable tools, built with care. Makers of Trellis and Gable.">
 <link rel="icon" type="image/png" href="assets/millwright-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #F2EAD6;
@@ -16,11 +21,15 @@
     --muted: #8C7F5E;
     --accent: #5F7A45;
     --on-accent: #FAF3E4;
+    --bronze: #9A6B3A;
     --border: #DECFA6;
-    --tile: #F5E9D7;
-    --culvert: #4C6C8C;
+    --note: rgba(51, 66, 43, .05);
     --gable: #0F6B60;
+    --gable-deep: #0A2724;
+    --gable-mid: #114741;
+    --mint: #9EF2E3;
     --shadow: 0 1px 2px rgba(61, 42, 22, .06), 0 10px 30px rgba(61, 42, 22, .08);
+    --phone-shadow: drop-shadow(0 22px 40px rgba(61, 42, 22, .22));
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -28,13 +37,14 @@
       --surface: #262B21;
       --ink: #E7E2CF;
       --body: #CFC9B4;
-      --muted: #93A17E;
+      --muted: #A39A7E;
       --accent: #9CC17A;
       --on-accent: #1C2018;
+      --bronze: #D9A86C;
       --border: #3A4030;
-      --culvert: #7FA3C6;
-      --gable: #7FE0CF;
+      --note: rgba(231, 226, 207, .05);
       --shadow: none;
+      --phone-shadow: drop-shadow(0 22px 40px rgba(0, 0, 0, .45));
     }
   }
   :root[data-theme="dark"] {
@@ -42,312 +52,251 @@
     --surface: #262B21;
     --ink: #E7E2CF;
     --body: #CFC9B4;
-    --muted: #93A17E;
+    --muted: #A39A7E;
     --accent: #9CC17A;
     --on-accent: #1C2018;
+    --bronze: #D9A86C;
     --border: #3A4030;
-    --culvert: #7FA3C6;
-    --gable: #7FE0CF;
+    --note: rgba(231, 226, 207, .05);
     --shadow: none;
+    --phone-shadow: drop-shadow(0 22px 40px rgba(0, 0, 0, .45));
   }
 
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   html, body { margin: 0; padding: 0; }
-
   body {
     background: var(--bg);
     color: var(--body);
     font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
-    font-size: 17px;
-    line-height: 1.65;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; color: var(--ink); line-height: 1.1; margin: 0; }
 
-  .page {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 88px 24px 72px;
-  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-family: "Fraunces", Georgia, serif; font-style: italic; color: var(--bronze); font-size: 17px; }
 
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-
-  header.brand {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 36px;
-  }
-  header.brand img { width: 76px; height: auto; flex: none; }
-
-  .wordmark {
-    font-family: "Fraunces", Georgia, serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 1.02;
-    color: var(--ink);
-    margin: 0 0 6px;
-    text-wrap: balance;
-  }
-
-  .tagline {
-    font-style: italic;
-    font-size: 17px;
-    color: var(--muted);
-    margin: 0;
-  }
-
-  .about p { max-width: 62ch; margin: 0 0 18px; }
-  .about p:last-child { margin-bottom: 0; }
-  .about p:first-child { font-size: 19px; color: var(--ink); }
-
-  .lattice {
-    width: 100%;
-    height: 22px;
-    margin: 44px 0 40px;
-    display: block;
-  }
-  .lattice line { stroke: var(--border); stroke-width: 1.4; }
-  .lattice circle { fill: var(--accent); }
-
-  .section-label {
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 600;
-    font-size: 13px;
-    color: var(--muted);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin: 0 0 16px;
-  }
-
-  .apps { display: grid; gap: 18px; }
-
-  .app-card {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    gap: 22px;
-    padding: 26px 26px 24px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-  }
-
-  .app-card .icon {
-    flex: none;
-    width: 72px;
-    height: 72px;
-    border-radius: 22%;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(61, 42, 22, .12), inset 0 0 0 1px rgba(132, 99, 54, .14);
-  }
-  .app-card .icon.trellis { background: var(--tile); }
-  .app-card .icon img, .app-card .icon svg { width: 100%; height: 100%; display: block; }
-
-  .app-card .content { position: relative; z-index: 1; min-width: 0; }
-  .app-card.has-art .content { padding-right: 110px; }
-
-  .app-card h3 {
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 600;
-    font-size: 26px;
-    line-height: 1.15;
-    color: var(--ink);
-    margin: 0 0 2px;
-  }
-  .app-card .platform {
-    font-size: 14px;
-    font-style: italic;
-    color: var(--muted);
-    margin: 0 0 10px;
-  }
-  .app-card .desc { margin: 0 0 14px; font-size: 16px; line-height: 1.55; }
-
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 18px; padding: 0; list-style: none; }
-  .tags li {
-    font-size: 13px;
-    padding: 2px 11px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    color: var(--body);
-  }
-
-  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+  /* Buttons */
   .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: "Source Serif 4", Georgia, serif;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 9px 18px;
-    border-radius: 999px;
-    background: var(--accent);
-    color: var(--on-accent);
-    text-decoration: none;
-    transition: transform .15s, filter .15s;
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: "Source Serif 4", Georgia, serif; font-weight: 600; font-size: 16px;
+    padding: 11px 20px; border-radius: 999px; text-decoration: none;
+    background: var(--accent); color: var(--on-accent);
+    transition: transform .15s ease, filter .15s ease;
   }
-  .btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
-  .btn.culvert { background: var(--culvert); }
-  .btn.gable { background: var(--gable); }
-  .link { font-size: 15px; }
+  .btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--border); }
+  .btn.gable { background: var(--mint); color: var(--gable-deep); }
 
-  .app-card .art {
-    position: absolute;
-    right: 18px;
-    bottom: -6px;
-    width: 104px;
-    height: auto;
-    pointer-events: none;
-  }
+  /* Top bar */
+  .top { display: flex; align-items: center; gap: 20px; padding: 22px 0; }
+  .top .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink);
+    font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 21px; }
+  .top .brand img { width: 40px; }
+  .top nav { margin-left: auto; display: flex; gap: 22px; font-size: 16px; }
+  .top nav a { color: var(--body); text-decoration: none; }
+  .top nav a:hover { color: var(--accent); }
 
-  footer {
-    margin-top: 56px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    font-size: 15px;
-    color: var(--muted);
-  }
-  footer .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 8px 20px;
-    margin-top: 10px;
-    font-size: 14px;
-  }
-  footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  /* Hero */
+  .hero { text-align: center; padding: 64px 0 40px; }
+  .hero .mark { width: 92px; margin: 0 auto 26px; }
+  .hero h1 { font-size: clamp(40px, 6.4vw, 72px); letter-spacing: -0.01em; max-width: 12em; margin: 0 auto; }
+  .hero h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .hero .lede { font-size: 20px; max-width: 34em; margin: 22px auto 30px; }
+  .hero .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-  @media (max-width: 560px) {
-    .page { padding: 56px 20px 64px; }
-    header.brand { gap: 14px; }
-    header.brand img { width: 56px; }
-    .wordmark { font-size: 36px; }
-    .app-card { flex-direction: column; gap: 16px; padding: 22px 20px; }
-    .app-card .icon { width: 60px; height: 60px; }
-    .app-card.has-art .content { padding-right: 0; }
-    .app-card .art { width: 78px; top: 14px; right: 14px; bottom: auto; }
+  .lattice { display: block; width: 240px; height: 22px; margin: 56px auto 0; stroke: var(--border); stroke-width: 1.6; fill: none; }
+  .lattice circle { fill: var(--accent); stroke: none; }
+
+  /* App sections */
+  .app { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 72px 0; }
+  .app + .app { border-top: 1px solid var(--border); }
+  .app.flip .phones { order: -1; }
+  .app .name { display: flex; align-items: center; gap: 16px; margin: 10px 0 14px; }
+  .app .name img { width: 64px; border-radius: 16px; box-shadow: var(--shadow); }
+  .app h2 { font-size: clamp(36px, 5vw, 52px); }
+  .app .tagline { font-family: "Fraunces", Georgia, serif; font-size: 23px; color: var(--ink); margin: 0 0 14px; line-height: 1.3; }
+  .app p { margin: 0 0 14px; }
+  .app ul.points { margin: 0 0 22px; padding: 0; list-style: none; }
+  .app ul.points li { padding-left: 26px; position: relative; margin-bottom: 8px; }
+  .app ul.points li::before { content: ""; position: absolute; left: 4px; top: .62em; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+  .app.gable-app ul.points li::before { background: var(--gable); }
+  .app .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+  .app .actions .link { font-size: 16px; }
+  .platform { font-size: 15px; color: var(--muted); margin-top: 12px; }
+  .note { font-size: 15px; line-height: 1.55; color: var(--muted); background: var(--note); border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px 16px; margin: 0 0 20px; }
+  .note strong { color: var(--body); }
+
+  .phones { position: relative; display: flex; justify-content: center; align-items: flex-end; min-height: 520px; }
+  .phones img { width: min(250px, 46%); filter: var(--phone-shadow); }
+  .phones img + img { margin-left: -46px; margin-bottom: 44px; }
+  .gable-app .phones { padding-bottom: 32px; }
+  .gable-app .phones::before { content: ""; position: absolute; inset: 22% 0 0; border-radius: 36px;
+    background: linear-gradient(180deg, var(--gable-mid), var(--gable-deep)); }
+  .gable-app .phones img { position: relative; }
+
+  /* About */
+  .about { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 0; }
+  .about .grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; }
+  .about h2 { font-size: clamp(32px, 4.4vw, 44px); margin: 8px 0 16px; }
+  .about p { margin: 0 0 14px; }
+  .about ol { list-style: none; counter-reset: p; margin: 0; padding: 0; display: grid; gap: 24px; }
+  .about li { counter-increment: p; display: grid; grid-template-columns: 44px 1fr; gap: 4px 14px; }
+  .about li::before { content: counter(p, upper-roman) "."; grid-row: span 2; font-family: "Fraunces", Georgia, serif; font-style: italic; color: var(--bronze); font-size: 20px; }
+  .about h3 { font-size: 21px; }
+  .about li p { margin: 0; font-size: 17px; }
+
+  /* Support */
+  .support { text-align: center; padding: 80px 0 64px; }
+  .support h2 { font-size: clamp(30px, 4.4vw, 42px); margin: 8px 0 12px; }
+  .support p { max-width: 32em; margin: 0 auto 26px; }
+  .support .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  footer { border-top: 1px solid var(--border); padding: 28px 0 48px; font-size: 15px; color: var(--muted); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }
+  footer nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  footer a { color: var(--muted); }
+
+  @media (max-width: 820px) {
+    .top nav { display: none; }
+    .hero { padding-top: 36px; }
+    .app, .about .grid { grid-template-columns: 1fr; gap: 36px; }
+    .app { padding: 56px 0; }
+    .app.flip .phones { order: 0; }
+    .phones { min-height: 0; }
+    .phones img { width: min(200px, 46%); }
+    .phones img + img { margin-left: -30px; margin-bottom: 30px; }
+    footer nav { margin-left: 0; }
   }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="page">
-  <header class="brand">
-    <img src="assets/millwright-mark.png" alt="Millwright Apps logo">
-    <div>
-      <h1 class="wordmark">Millwright Apps</h1>
-      <p class="tagline">Solid, dependable tools, built with care.</p>
-    </div>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><img src="assets/millwright-mark.png" alt="">Millwright Apps</a>
+    <nav>
+      <a href="#trellis">Trellis</a>
+      <a href="#gable">Gable</a>
+      <a href="#about">About</a>
+      <a href="#support">Support</a>
+    </nav>
   </header>
 
-  <div class="about">
-    <p>
-      Millwright is a one-person app studio. No team, no funding — just someone who likes
-      building useful, well-made things and figuring it out as I go.
-    </p>
-    <p>
-      The name comes from the old trade: a millwright is the person who builds and maintains
-      the machinery that keeps everything running. That's the idea here — dependable tools,
-      built with care rather than chasing trends.
-    </p>
-  </div>
-
-  <svg class="lattice" viewBox="0 0 640 22" preserveAspectRatio="none" aria-hidden="true">
-    <line x1="0" y1="4" x2="640" y2="4"/>
-    <line x1="0" y1="18" x2="640" y2="18"/>
-    <line x1="296" y1="0" x2="320" y2="22"/>
-    <line x1="320" y1="0" x2="344" y2="22"/>
-    <circle cx="308" cy="11" r="2.5"/>
-    <circle cx="332" cy="11" r="2.5"/>
-  </svg>
-
-  <h2 class="section-label">Apps</h2>
-  <div class="apps">
-    <article class="app-card has-art">
-      <div class="icon trellis"><img src="assets/trellis-icon.png" alt="Trellis app icon"></div>
-      <div class="content">
-        <h3>Trellis</h3>
-        <p class="platform">Available on Android · iOS coming soon</p>
-        <p class="desc">A task, calendar, and weather app with a garden that grows as you get things done.</p>
-
-        <!-- REQUIRED GOOGLE OAUTH DISCLOSURE -->
-        <div style="font-size: 14px; line-height: 1.5; color: var(--muted); background: rgba(0,0,0,0.03); padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; border: 1px solid rgba(0,0,0,0.05);">
-          <strong>How Trellis uses Google Calendar:</strong> If you connect it, Trellis lists your subscribed calendars and displays their events alongside your tasks. You can create, edit, or delete events on calendars your Google account can edit. Calendar data travels directly between your device and Google over HTTPS; it does not pass through Trellis's server. Optional weather, feedback, purchase, and Drive backup data are described in the <a href="privacy.html">privacy policy</a>.
-        </div>
-
-        <ul class="tags">
-          <li>Tasks</li><li>Calendar</li><li>Weather</li><li>Journal</li>
-        </ul>
-        <div class="actions">
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.millwrightapps.trellis">
-            <svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1.2v13.6c0 .5.5.8 1 .5l11.3-6.8c.4-.3.4-.8 0-1.1L2 .6c-.5-.2-1 .1-1 .6z" fill="currentColor"/></svg>
-            Get it on Google Play
-          </a>
-          <a class="link" href="privacy.html">Privacy policy</a>
-        </div>
-      </div>
-      <img class="art" src="assets/trellis-sunflower.webp" alt="">
-    </article>
-
-    <article class="app-card">
-      <div class="icon">
-        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <rect width="40" height="40" fill="#4C6C8C"/>
-          <path d="M11 24C11 27.3 13.7 30 17 30H23C26.3 30 29 27.3 29 24V16" stroke="#FAF3E4" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M11 16V24" stroke="#FAF3E4" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M29 16C29 12.7 26.3 10 23 10H17C13.7 10 11 12.7 11 16" stroke="#FAF3E4" stroke-width="2.2" stroke-linecap="round" opacity="0.55"/>
-        </svg>
-      </div>
-      <div class="content">
-        <h3>Culvert</h3>
-        <p class="platform">Personal email client</p>
-        <p class="desc">A unified Gmail + Outlook inbox that sorts itself out, entirely on your device.</p>
-        <ul class="tags">
-          <li>Gmail</li><li>Outlook</li><li>On-device</li>
-        </ul>
-        <div class="actions">
-          <a class="btn culvert" href="culvert/index.html">Learn more</a>
-          <a class="link" href="culvert/privacy.html">Privacy policy</a>
-        </div>
-      </div>
-    </article>
-    <article class="app-card">
-      <div class="icon"><img src="assets/gable-icon.png" alt="Gable app icon"></div>
-      <div class="content">
-        <h3>Gable</h3>
-        <p class="platform">Weather and radar · Available on Android</p>
-        <p class="desc">Free high-resolution NOAA radar, National Weather Service forecasts and alerts, and a little personality.</p>
-        <ul class="tags">
-          <li>Weather</li><li>Radar</li><li>Alerts</li>
-        </ul>
-        <div class="actions">
-          <a class="btn gable" href="https://play.google.com/store/apps/details?id=com.millwright.gable">
-            <svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1.2v13.6c0 .5.5.8 1 .5l11.3-6.8c.4-.3.4-.8 0-1.1L2 .6c-.5-.2-1 .1-1 .6z" fill="currentColor"/></svg>
-            Get it on Google Play
-          </a>
-          <a class="link" href="gable/index.html">Learn more</a>
-          <a class="link" href="gable/privacy.html">Privacy policy</a>
-        </div>
-      </div>
-    </article>
-  </div>
-
-  <footer>
-    Questions, feedback, or just want to say hi? <a href="mailto:jlamp606@gmail.com">jlamp606@gmail.com</a><br>
-    Enjoying the apps? <a href="https://buymeacoffee.com/millwrightapps">Buy me a coffee</a> ☕
-    <div class="row">
-      <span>© 2026 Millwright Apps</span>
-      <nav>
-        <a href="privacy.html">Trellis Privacy Policy</a>
-        <a href="culvert/privacy.html">Culvert Privacy Policy</a>
-        <a href="gable/privacy.html">Gable Privacy Policy</a>
-      </nav>
+  <section class="hero">
+    <img class="mark" src="assets/millwright-mark.png" alt="Millwright Apps logo">
+    <h1>Solid, dependable tools, <em>built with care.</em></h1>
+    <p class="lede">Millwright is a one-person app studio making everyday apps that do their job well, look after your data, and have a little character.</p>
+    <div class="ctas">
+      <a class="btn" href="#trellis">Meet Trellis</a>
+      <a class="btn ghost" href="#gable">Meet Gable</a>
     </div>
-  </footer>
+    <svg class="lattice" viewBox="0 0 240 22" aria-hidden="true">
+      <line x1="0" y1="4" x2="240" y2="4"/><line x1="0" y1="18" x2="240" y2="18"/>
+      <line x1="96" y1="0" x2="120" y2="22"/><line x1="120" y1="0" x2="144" y2="22"/>
+      <circle cx="108" cy="11" r="2.8"/><circle cx="132" cy="11" r="2.8"/>
+    </svg>
+  </section>
+
+  <section class="app" id="trellis">
+    <div>
+      <div class="eyebrow">Tasks, calendar and weather</div>
+      <div class="name"><img src="assets/trellis-icon.png" alt="Trellis app icon"><h2>Trellis</h2></div>
+      <p class="tagline">A planner with a garden that grows as you get things done.</p>
+      <ul class="points">
+        <li>Tasks, a time-blocked schedule and your calendar in one place</li>
+        <li>Every finished day plants a flower in your garden</li>
+        <li>Morning and evening rituals, a journal, and weather with attitude</li>
+      </ul>
+
+      <!-- REQUIRED GOOGLE OAUTH DISCLOSURE -->
+      <p class="note"><strong>How Trellis uses Google Calendar:</strong> If you connect it, Trellis lists your subscribed calendars and displays their events alongside your tasks. You can create, edit, or delete events on calendars your Google account can edit. Calendar data travels directly between your device and Google over HTTPS; it does not pass through Trellis's server. Optional weather, feedback, purchase, and Drive backup data are described in the <a href="privacy.html">privacy policy</a>.</p>
+
+      <div class="actions">
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.millwrightapps.trellis">
+          <svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1.2v13.6c0 .5.5.8 1 .5l11.3-6.8c.4-.3.4-.8 0-1.1L2 .6c-.5-.2-1 .1-1 .6z" fill="currentColor"/></svg>
+          Get it on Google Play
+        </a>
+        <a class="link" href="privacy.html">Privacy policy</a>
+      </div>
+      <p class="platform">Available on Android · iOS coming soon</p>
+    </div>
+    <div class="phones">
+      <img src="assets/trellis/today.webp" width="628" height="1235" loading="lazy" alt="Trellis Today screen: two tasks left, the weather, and a small tree growing in the garden">
+      <img src="assets/trellis/garden.webp" width="628" height="1235" loading="lazy" alt="The Trellis garden: a month of days, each finished day with its own flower">
+    </div>
+  </section>
+
+  <section class="app flip gable-app" id="gable">
+    <div>
+      <div class="eyebrow">Weather and radar</div>
+      <div class="name"><img src="assets/gable-icon.png" alt="Gable app icon"><h2>Gable</h2></div>
+      <p class="tagline">The radar the pros use, free. With a little personality.</p>
+      <ul class="points">
+        <li>High-resolution radar from NOAA's 143 NEXRAD stations</li>
+        <li>Forecasts written by your local National Weather Service office</li>
+        <li>Severe weather alerts and a hurricane tracker, always free</li>
+      </ul>
+      <div class="actions">
+        <a class="btn gable" href="https://play.google.com/store/apps/details?id=com.millwright.gable">
+          <svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1.2v13.6c0 .5.5.8 1 .5l11.3-6.8c.4-.3.4-.8 0-1.1L2 .6c-.5-.2-1 .1-1 .6z" fill="currentColor"/></svg>
+          Get it on Google Play
+        </a>
+        <a class="link" href="gable/index.html">Learn more</a>
+        <a class="link" href="gable/privacy.html">Privacy policy</a>
+      </div>
+      <p class="platform">Available on Android · No ads</p>
+    </div>
+    <div class="phones">
+      <img src="assets/gable/forecast.webp" width="628" height="1251" loading="lazy" alt="Gable's forecast for Chicago: 69 degrees and overcast, with a quip about the clouds">
+      <img src="assets/gable/radar.webp" width="628" height="1251" loading="lazy" alt="Gable station radar with showers over Chicago and Lake Michigan">
+    </div>
+  </section>
 </div>
+
+<section class="about" id="about">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">About</div>
+      <h2>Why "Millwright"?</h2>
+      <p>A millwright is the person who builds and maintains the machinery that keeps everything running. That's the idea here: dependable tools, built with care rather than chasing trends.</p>
+      <p>Millwright is one person. No team, no funding, just someone who likes building useful, well-made things.</p>
+    </div>
+    <ol>
+      <li><h3>Made to be used every day</h3><p>Apps you open without thinking, because they're quick, clear and do what they say.</p></li>
+      <li><h3>Your data, handled honestly</h3><p>Only what each feature needs, explained in plain language in each app's privacy policy.</p></li>
+      <li><h3>A little character</h3><p>A garden that grows with your to-do list. A weather app with opinions. Useful doesn't have to be dull.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="support" id="support">
+  <div class="wrap">
+    <div class="eyebrow">Support</div>
+    <h2>Questions, ideas, or just want to say hi?</h2>
+    <p>Every email gets read by the person who built the app. And if Trellis or Gable has made your day a little better, a coffee keeps the work going.</p>
+    <div class="ctas">
+      <a class="btn" href="mailto:jlamp606@gmail.com">Email jlamp606@gmail.com</a>
+      <a class="btn ghost" href="https://buymeacoffee.com/millwrightapps">Buy me a coffee ☕</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Millwright Apps</span>
+    <nav>
+      <a href="privacy.html">Trellis Privacy Policy</a>
+      <a href="gable/index.html">Gable</a>
+      <a href="gable/privacy.html">Gable Privacy Policy</a>
+    </nav>
+  </div>
+</footer>
+
 </body>
 </html>
