@@ -222,7 +222,8 @@
       <li><strong>National Weather Service</strong> (<code>api.weather.gov</code>) for U.S. forecasts and alerts, directly from your device.</li>
       <li><strong>MET Norway</strong>, <strong>WeatherAPI.com</strong> as a backup when other sources don't answer, and, if you choose them, <strong>Open-Meteo</strong> or <strong>AccuWeather</strong>, through Gable's own forwarding service on Cloudflare. Coordinates are rounded to about 1 km there, and nearby users share cached answers.</li>
       <li><strong>Gable's rain data</strong> (short-term U.S. rain forecasts that Gable prepares from NOAA's HRRR model), fetched from the same Cloudflare service.</li>
-      <li><strong>Apple Weather</strong> on iPhone and iPad, only if you choose it as your forecast source. The place's coordinates are sent to Apple's WeatherKit service.</li>
+      <li><strong>Apple Weather</strong>. On iPhone and iPad, only if you choose it as your forecast source; the place's coordinates are sent to Apple's WeatherKit service. On Android, it's the automatic forecast outside the U.S. and Canada, requested through Gable's forwarding service with coordinates rounded to about 1 km, so Apple sees the service, not your device.</li>
+      <li><strong>Rainbow Weather</strong> (Rainbow.ai), for minute-by-minute rain and, outside the U.S. and the Nordic countries, Spotter's "rain starting soon" heads-up, through the same service with coordinates rounded to about 1 km or more.</li>
       <li><strong>Visual Crossing</strong>, for Spotter's 15-day outlook and "this day last year", through the same service. Coordinates are rounded to about 10 km there, and only when you open those features.</li>
       <li><strong>U.S. EPA AirNow</strong>, for Spotter's air quality card, through the same service. Coordinates are rounded to about 10 km there, and only when that card is shown.</li>
     </ul>
@@ -264,6 +265,20 @@
       15 minutes for active alerts at your saved places and your last known current location,
       and shows notifications on your device. This check runs on your phone. No Gable server
       stores your places, and alerts never read your location in the background.
+    </p>
+    <p>
+      Outside the U.S., warnings come from <strong>Environment and Climate Change Canada</strong>, which receives a
+      small area around the place, and from the national weather services of 39 European countries through
+      <strong>EUMETNET's MeteoAlarm</strong>. For MeteoAlarm, Gable downloads the whole country's warning feed and
+      matches it to your places on your phone, so no location is sent. Gable doesn't send your places to either
+      service beyond that.
+    </p>
+    <p>
+      With Spotter, "lightning nearby" checks for strikes in a small area around your places from NOAA in the
+      Americas, the <strong>Danish Meteorological Institute</strong> in Denmark, and the <strong>Finnish
+      Meteorological Institute</strong> in the Nordic and Baltic countries. Spotter's nearby station card outside the
+      U.S. shows airport reports from NOAA's <strong>aviationweather.gov</strong>, which receives a small area around
+      the place.
     </p>
     <p>
       <strong>On iPhone and iPad</strong>, alerts are shown in the app for the place you're viewing. The app
@@ -323,13 +338,15 @@
     <p>These services receive the data described above and handle it under their own policies:</p>
     <ul>
       <li><a href="https://policies.google.com/privacy">Google</a> (Maps, place search, Play), on Android</li>
-      <li><a href="https://www.apple.com/legal/privacy/">Apple</a> (Maps, place search, Apple Weather, App Store), on iPhone and iPad</li>
+      <li><a href="https://www.apple.com/legal/privacy/">Apple</a> (Apple Weather; and on iPhone and iPad, Maps, place search and the App Store)</li>
+      <li><a href="https://www.rainbow.ai/privacy-policy">Rainbow.ai</a>, for minute-by-minute rain</li>
+      <li><a href="https://www.meteoalarm.org/en/live/page/terms-and-conditions">EUMETNET MeteoAlarm</a>, the <a href="https://www.dmi.dk/friedata/guides-til-frie-data/vilkar-for-brug-af-data">Danish Meteorological Institute</a> and the <a href="https://en.ilmatieteenlaitos.fi/data-protection">Finnish Meteorological Institute</a>, on Android</li>
       <li><a href="https://www.weather.gov/privacy">National Weather Service / NOAA</a></li>
       <li><a href="https://www.met.no/en/about-us/privacy">MET Norway</a></li>
       <li><a href="https://open-meteo.com/en/terms">Open-Meteo</a>, only if you choose one of its models</li>
       <li><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a></li>
-      <li><a href="https://www.canada.ca/en/transparency/privacy.html">Environment and Climate Change Canada</a> and <a href="https://www.nasa.gov/privacy/">NASA</a>, only if you turn on Spotter's layers beyond the U.S.</li>
-      <li><a href="https://www.visualcrossing.com/privacy-policy">Visual Crossing</a>, only for Spotter's 15-day outlook and past days</li>
+      <li><a href="https://www.canada.ca/en/transparency/privacy.html">Environment and Climate Change Canada</a>, for Canadian forecasts, warnings and radar, and <a href="https://www.nasa.gov/privacy/">NASA</a>, only if you turn on Spotter's layers beyond the U.S.</li>
+      <li><a href="https://www.visualcrossing.com/privacy/">Visual Crossing</a>, only for Spotter's 15-day outlook and past days</li>
       <li><a href="https://www.epa.gov/privacy">U.S. EPA AirNow</a>, only for Spotter's air quality card (data from state, local and tribal air agencies)</li>
       <li><a href="https://www.weatherapi.com/privacy.aspx">WeatherAPI.com</a>, on Android</li>
       <li><a href="https://aws.amazon.com/privacy/">Amazon Web Services</a>, which hosts part of NOAA's public radar archive used on iPhone and iPad</li>
