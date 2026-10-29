@@ -171,12 +171,13 @@
   </a>
 
   <h1>Privacy Policy</h1>
-  <p class="meta">Last updated October 17, 2026</p>
+  <p class="meta">Last updated October 29, 2026</p>
 
   <p class="intro">
-    Gable is a weather and radar app for Android. This policy explains what Gable uses, why, and
+    Gable is a weather and radar app for Android, iPhone and iPad. This policy explains what Gable uses, why, and
     where it goes. Gable has no user accounts, no third-party analytics or trackers, and no ads. Your places,
-    settings and cached forecasts are stored on your device.
+    settings and cached forecasts are stored on your device. Where the iPhone and iPad app works differently,
+    each section says so.
   </p>
 
   <svg class="current" viewBox="0 0 640 22" preserveAspectRatio="none" aria-hidden="true">
@@ -196,6 +197,10 @@
     <p>
       You can always search for a city instead, or turn location off in Android settings.
     </p>
+    <p>
+      <strong>On iPhone and iPad</strong>, Gable asks for approximate location only while you're using it, and
+      never in the background. Turn it off in <em>Settings → Gable → Location</em>.
+    </p>
   </section>
 
   <section>
@@ -203,6 +208,10 @@
     <p>
       Places you save are stored only on your device. When you search for a city, the text you
       type is sent to Google's geocoding service, built into Android through Google Play services, to find matching places.
+    </p>
+    <p>
+      <strong>On iPhone and iPad</strong>, searches use Apple's place search, and Apple also provides the name
+      of the town for your current location.
     </p>
   </section>
 
@@ -213,9 +222,15 @@
       <li><strong>National Weather Service</strong> (<code>api.weather.gov</code>) for U.S. forecasts and alerts, directly from your device.</li>
       <li><strong>MET Norway</strong>, <strong>WeatherAPI.com</strong> as a backup when other sources don't answer, and, if you choose them, <strong>Open-Meteo</strong> or <strong>AccuWeather</strong>, through Gable's own forwarding service on Cloudflare. Coordinates are rounded to about 1 km there, and nearby users share cached answers.</li>
       <li><strong>Gable's rain data</strong> (short-term U.S. rain forecasts that Gable prepares from NOAA's HRRR model), fetched from the same Cloudflare service.</li>
+      <li><strong>Apple Weather</strong> on iPhone and iPad, only if you choose it as your forecast source. The place's coordinates are sent to Apple's WeatherKit service.</li>
       <li><strong>Visual Crossing</strong>, for Spotter's 15-day outlook and "this day last year", through the same service. Coordinates are rounded to about 10 km there, and only when you open those features.</li>
       <li><strong>U.S. EPA AirNow</strong>, for Spotter's air quality card, through the same service. Coordinates are rounded to about 10 km there, and only when that card is shown.</li>
     </ul>
+    <p>
+      <strong>On iPhone and iPad</strong>, forecasts come from the National Weather Service, MET Norway (through
+      the same forwarding service, rounded to about 1 km) and, if you choose it, Apple Weather. The other
+      services in this list are used only by the Android app.
+    </p>
     <p>
       Gable's forwarding service doesn't keep your requests. Like any website, it sees your IP
       address while answering, which it uses only to limit abuse (a per-address request limit).
@@ -233,6 +248,13 @@
       worldwide rainfall estimate from <strong>NASA</strong>. These services receive the map area
       you're viewing. Google Maps is covered by Google's privacy policy.
     </p>
+    <p>
+      <strong>On iPhone and iPad</strong>, the base map is <strong>Apple Maps</strong>. Radar, warnings and layers
+      come from NOAA and the National Weather Service (some of NOAA's radar archive is hosted on Amazon Web
+      Services), Canada's radar from Environment and Climate Change Canada, satellite imagery from NASA, and
+      creek levels and climate normals from USGS, NOAA and the Regional Climate Centers. These services receive
+      the area or place you're viewing.
+    </p>
   </section>
 
   <section>
@@ -242,6 +264,10 @@
       15 minutes for active alerts at your saved places and your last known current location,
       and shows notifications on your device. This check runs on your phone. No Gable server
       stores your places, and alerts never read your location in the background.
+    </p>
+    <p>
+      <strong>On iPhone and iPad</strong>, alerts are shown in the app for the place you're viewing. The app
+      doesn't check in the background or send alert notifications.
     </p>
   </section>
 
@@ -255,6 +281,11 @@
       subscription does, the service keeps the subscription's plan and end date under a one-way
       hash of the token, which can't be turned back into the token or linked to your Google account.
       Your subscription status is also kept on your device.
+    </p>
+    <p>
+      <strong>On iPhone and iPad</strong>, Spotter is sold through the <strong>App Store</strong>, which handles
+      payment. Purchases are verified on your device by Apple's StoreKit; nothing about them is sent to Gable or
+      its forwarding service.
     </p>
   </section>
 
@@ -270,6 +301,10 @@
       These are daily totals only. No device, account, location, IP address or purchase identifier
       is stored with them, so they can't be linked to you, and they're deleted after 30 days. They're
       used to keep the service within its limits and to understand which features people find useful.
+    </p>
+    <p>
+      The iPhone and iPad app doesn't count those four steps. Its forecast requests through the forwarding
+      service are included in the service's daily totals.
     </p>
   </section>
 
@@ -287,7 +322,8 @@
     <h2>Third-party services</h2>
     <p>These services receive the data described above and handle it under their own policies:</p>
     <ul>
-      <li><a href="https://policies.google.com/privacy">Google</a> (Maps, place search, Play)</li>
+      <li><a href="https://policies.google.com/privacy">Google</a> (Maps, place search, Play), on Android</li>
+      <li><a href="https://www.apple.com/legal/privacy/">Apple</a> (Maps, place search, Apple Weather, App Store), on iPhone and iPad</li>
       <li><a href="https://www.weather.gov/privacy">National Weather Service / NOAA</a></li>
       <li><a href="https://www.met.no/en/about-us/privacy">MET Norway</a></li>
       <li><a href="https://open-meteo.com/en/terms">Open-Meteo</a>, only if you choose one of its models</li>
@@ -295,7 +331,8 @@
       <li><a href="https://www.canada.ca/en/transparency/privacy.html">Environment and Climate Change Canada</a> and <a href="https://www.nasa.gov/privacy/">NASA</a>, only if you turn on Spotter's layers beyond the U.S.</li>
       <li><a href="https://www.visualcrossing.com/privacy-policy">Visual Crossing</a>, only for Spotter's 15-day outlook and past days</li>
       <li><a href="https://www.epa.gov/privacy">U.S. EPA AirNow</a>, only for Spotter's air quality card (data from state, local and tribal air agencies)</li>
-      <li><a href="https://www.weatherapi.com/privacy.aspx">WeatherAPI.com</a></li>
+      <li><a href="https://www.weatherapi.com/privacy.aspx">WeatherAPI.com</a>, on Android</li>
+      <li><a href="https://aws.amazon.com/privacy/">Amazon Web Services</a>, which hosts part of NOAA's public radar archive used on iPhone and iPad</li>
       <li><a href="https://www.accuweather.com/en/privacy">AccuWeather</a>, only if you choose it as your forecast source</li>
     </ul>
   </section>
@@ -305,14 +342,15 @@
     <p>Gable (by Millwright Apps) keeps your data on your phone, not on a Gable server. To delete it:</p>
     <ol>
       <li><strong>On your phone:</strong> open Android <em>Settings → Apps → Gable → Storage</em> and tap <em>Clear storage</em>, or uninstall Gable. This deletes everything Gable stored: saved places, your last current location, settings, cached forecasts and subscription status.</li>
-      <li><strong>Location:</strong> to stop Gable using location, set its location permission to <em>Don't allow</em> in Android settings.</li>
+      <li><strong>On iPhone or iPad:</strong> delete the Gable app. This deletes everything Gable stored, including what its widgets use.</li>
+      <li><strong>Location:</strong> to stop Gable using location, set its location permission to <em>Don't allow</em> in Android settings, or to <em>Never</em> in <em>Settings → Gable → Location</em> on iPhone and iPad.</li>
       <li><strong>Anything else:</strong> email <a href="mailto:jlamp606@gmail.com?subject=Gable%20data%20deletion">jlamp606@gmail.com</a> with the subject "Gable data deletion". We'll reply within 30 days.</li>
     </ol>
     <p><strong>What's kept, and for how long:</strong></p>
     <ul>
       <li>Gable's own service keeps no personal data. Forecast requests are answered and discarded. It keeps the <a href="#counts">anonymous daily counts</a> for 30 days, and for a subscription, only its plan and end date under a one-way hash of the purchase token.</li>
-      <li>Your subscription and payment records are kept by Google Play, under Google's policies. Cancel or manage a subscription in the Play Store under <em>Payments &amp; subscriptions</em>.</li>
-      <li>Usage and crash data collected by the Google Maps SDK is kept by Google under its own policies.</li>
+      <li>Your subscription and payment records are kept by Google Play, under Google's policies. Cancel or manage a subscription in the Play Store under <em>Payments &amp; subscriptions</em>. On iPhone and iPad, they're kept by Apple; manage a subscription in <em>Settings → your name → Subscriptions</em>.</li>
+      <li>Usage and crash data collected by the Google Maps SDK (Android) is kept by Google under its own policies.</li>
     </ul>
   </section>
 
