@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gable — weather and radar with a little personality</title>
-<meta name="description" content="Gable is an Android weather app with free high-resolution NOAA radar, National Weather Service forecasts and alerts, forecast charts, and a little personality.">
+<meta name="description" content="Gable is a weather app for Android, iPhone and iPad with free high-resolution NOAA radar, National Weather Service forecasts and alerts, forecast charts, and a little personality.">
 <meta property="og:title" content="Gable — weather and radar with a little personality">
 <meta property="og:description" content="Free high-resolution NOAA radar, forecasts from your local National Weather Service office, and alerts that never go quiet when it matters.">
 <meta property="og:image" content="https://millwrightapps.com/assets/gable-radar.jpg">
@@ -83,6 +83,8 @@
   }
   .play:hover { transform: translateY(-1px); filter: brightness(1.05); }
   .play svg { flex: none; }
+  /* The iPhone and iPad beta: an outlined companion to the Play button, on the dark hero and closing. */
+  .play.alt { background: transparent; color: var(--hero-ink); box-shadow: inset 0 0 0 1.5px var(--mint); }
 
   /* Header and hero, on Gable's deep green */
   .hero { background: linear-gradient(180deg, var(--hero-top), var(--hero-bottom)); color: var(--hero-body); }
@@ -198,7 +200,11 @@
             <svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1.2v13.6c0 .5.5.8 1 .5l11.3-6.8c.4-.3.4-.8 0-1.1L2 .6c-.5-.2-1 .1-1 .6z" fill="currentColor"/></svg>
             Get it on Google Play
           </a>
-          <span class="free"><b>Free</b> · No ads · Android</span>
+          <a class="play alt" href="https://testflight.apple.com/join/rJ8VDYVE">
+            <svg width="12" height="16" viewBox="0 0 12 16" aria-hidden="true"><rect x="1" y="1" width="10" height="14" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 12.6h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            iPhone &amp; iPad beta
+          </a>
+          <span class="free"><b>Free</b> · No ads · Android, iPhone and iPad</span>
         </div>
       </div>
       <img class="hero-phone" src="../assets/gable/forecast.webp" width="628" height="1251" alt="Gable's forecast for Chicago: 69 degrees and overcast, a quip about the clouds, and no rain expected for the next four hours">
@@ -301,10 +307,14 @@
 <section class="closing">
   <div class="wrap">
     <h2>Weather that takes the sky seriously. <em>And itself less so.</em></h2>
-    <p>Free on Android. No ads.</p>
+    <p>Free on Android, and in beta on iPhone and iPad. No ads.</p>
     <a class="play" href="https://play.google.com/store/apps/details?id=com.millwright.gable">
       <svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1.2v13.6c0 .5.5.8 1 .5l11.3-6.8c.4-.3.4-.8 0-1.1L2 .6c-.5-.2-1 .1-1 .6z" fill="currentColor"/></svg>
       Get it on Google Play
+    </a>
+    <a class="play alt" href="https://testflight.apple.com/join/rJ8VDYVE">
+      <svg width="12" height="16" viewBox="0 0 12 16" aria-hidden="true"><rect x="1" y="1" width="10" height="14" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 12.6h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      iPhone &amp; iPad beta
     </a>
     <p class="coffee">Enjoying Gable? <a href="https://buymeacoffee.com/millwrightapps">Buy me a coffee</a> ☕</p>
   </div>
