@@ -171,7 +171,7 @@
   </a>
 
   <h1>Privacy Policy</h1>
-  <p class="meta">Last updated October 29, 2026</p>
+  <p class="meta">Last updated November 4, 2026</p>
 
   <p class="intro">
     Gable is a weather and radar app for Android, iPhone and iPad. This policy explains what Gable uses, why, and
@@ -281,8 +281,22 @@
       the place.
     </p>
     <p>
-      <strong>On iPhone and iPad</strong>, alerts are shown in the app for the place you're viewing. The app
-      doesn't check in the background or send alert notifications.
+      <strong>On iPhone and iPad</strong>, notifications come from Gable's forwarding service instead, because iOS
+      doesn't let apps check reliably in the background. If you turn on severe weather alerts (or, with Spotter, rain
+      heads-ups), the app sends the service your device's notification token from Apple, your time zone, your
+      notification settings and quiet hours, whether you have Spotter, and each saved place's name and coordinates, rounded to about 1 km. Your
+      current location is included as a place, at the same rounding, while you use it. About every five minutes (less often when many places are being watched) the
+      service checks those places with the National Weather Service, Environment and Climate Change Canada, MeteoAlarm,
+      Gable's rain data and, in the Nordic countries, MET Norway's rain nowcast, and sends any notification through
+      <strong>Apple's Push Notification service</strong>. It remembers which warnings it has already sent so each one
+      notifies once. No name, account or IP address is stored with any of it.
+    </p>
+    <p>
+      If you follow rain or a storm on the Lock Screen (a Live Activity), the app sends that place's rounded
+      coordinates and the Live Activity's own update token, and the service updates it for up to two hours, then
+      deletes it. Turning off notifications in Gable removes your device from the service right away. A device the
+      service hasn't heard from in 30 days, or whose token Apple reports is no longer valid (for example, after you
+      delete the app), is deleted automatically.
     </p>
   </section>
 
@@ -299,8 +313,8 @@
     </p>
     <p>
       <strong>On iPhone and iPad</strong>, Spotter is sold through the <strong>App Store</strong>, which handles
-      payment. Purchases are verified on your device by Apple's StoreKit; nothing about them is sent to Gable or
-      its forwarding service.
+      payment. Purchases are verified on your device by Apple's StoreKit. If you turn on notifications, only whether
+      you have Spotter is sent to Gable's forwarding service with your notification settings; no purchase details are.
     </p>
   </section>
 
@@ -338,9 +352,9 @@
     <p>These services receive the data described above and handle it under their own policies:</p>
     <ul>
       <li><a href="https://policies.google.com/privacy">Google</a> (Maps, place search, Play), on Android</li>
-      <li><a href="https://www.apple.com/legal/privacy/">Apple</a> (Apple Weather; and on iPhone and iPad, Maps, place search and the App Store)</li>
+      <li><a href="https://www.apple.com/legal/privacy/">Apple</a> (Apple Weather; and on iPhone and iPad, Maps, place search, the App Store and the Push Notification service)</li>
       <li><a href="https://www.rainbow.ai/privacy-policy">Rainbow.ai</a>, for minute-by-minute rain</li>
-      <li><a href="https://www.meteoalarm.org/en/live/page/terms-and-conditions">EUMETNET MeteoAlarm</a>, the <a href="https://www.dmi.dk/friedata/guides-til-frie-data/vilkar-for-brug-af-data">Danish Meteorological Institute</a> and the <a href="https://en.ilmatieteenlaitos.fi/data-protection">Finnish Meteorological Institute</a>, on Android</li>
+      <li><a href="https://www.meteoalarm.org/en/live/page/terms-and-conditions">EUMETNET MeteoAlarm</a>, and on Android the <a href="https://www.dmi.dk/friedata/guides-til-frie-data/vilkar-for-brug-af-data">Danish Meteorological Institute</a> and the <a href="https://en.ilmatieteenlaitos.fi/data-protection">Finnish Meteorological Institute</a></li>
       <li><a href="https://www.weather.gov/privacy">National Weather Service / NOAA</a></li>
       <li><a href="https://www.met.no/en/about-us/privacy">MET Norway</a></li>
       <li><a href="https://open-meteo.com/en/terms">Open-Meteo</a>, only if you choose one of its models</li>
@@ -356,16 +370,16 @@
 
   <section id="delete-data">
     <h2>Delete your Gable data</h2>
-    <p>Gable (by Millwright Apps) keeps your data on your phone, not on a Gable server. To delete it:</p>
+    <p>Gable (by Millwright Apps) keeps your data on your phone, not on a Gable server, except for iPhone and iPad notifications (below). To delete it:</p>
     <ol>
       <li><strong>On your phone:</strong> open Android <em>Settings → Apps → Gable → Storage</em> and tap <em>Clear storage</em>, or uninstall Gable. This deletes everything Gable stored: saved places, your last current location, settings, cached forecasts and subscription status.</li>
-      <li><strong>On iPhone or iPad:</strong> delete the Gable app. This deletes everything Gable stored, including what its widgets use.</li>
+      <li><strong>On iPhone or iPad:</strong> delete the Gable app. This deletes everything Gable stored, including what its widgets use. If you turned on notifications, turn them off first in Gable's <em>Settings → Notifications</em> to remove your device from Gable's service right away; otherwise it's deleted once Apple reports the app is gone, or after 30 days.</li>
       <li><strong>Location:</strong> to stop Gable using location, set its location permission to <em>Don't allow</em> in Android settings, or to <em>Never</em> in <em>Settings → Gable → Location</em> on iPhone and iPad.</li>
       <li><strong>Anything else:</strong> email <a href="mailto:jlamp606@gmail.com?subject=Gable%20data%20deletion">jlamp606@gmail.com</a> with the subject "Gable data deletion". We'll reply within 30 days.</li>
     </ol>
     <p><strong>What's kept, and for how long:</strong></p>
     <ul>
-      <li>Gable's own service keeps no personal data. Forecast requests are answered and discarded. It keeps the <a href="#counts">anonymous daily counts</a> for 30 days, and for a subscription, only its plan and end date under a one-way hash of the purchase token.</li>
+      <li>Gable's own service keeps no personal data. Forecast requests are answered and discarded. It keeps the <a href="#counts">anonymous daily counts</a> for 30 days, and for a subscription, only its plan and end date under a one-way hash of the purchase token. For iPhone and iPad notifications, it keeps the notification token, settings and rounded places described under <em>Severe weather alerts</em> until you turn notifications off, or for at most 30 days after the app last checked in.</li>
       <li>Your subscription and payment records are kept by Google Play, under Google's policies. Cancel or manage a subscription in the Play Store under <em>Payments &amp; subscriptions</em>. On iPhone and iPad, they're kept by Apple; manage a subscription in <em>Settings → your name → Subscriptions</em>.</li>
       <li>Usage and crash data collected by the Google Maps SDK (Android) is kept by Google under its own policies.</li>
     </ul>
